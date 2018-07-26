@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <p><a href="https://npmjs.org/package/rickshaw"><img src="https://img.shields.io/npm/v/rickshaw.svg?style=flat-square" alt="NPM version" /></a>
+<a href="https://travis-ci.org/shutterstock/rickshaw"><img src="https://travis-ci.org/shutterstock/rickshaw.svg?branch=master" alt="Build Status" /></a>
+<a href="https://coveralls.io/github/shutterstock/rickshaw"><img src="https://coveralls.io/repos/github/shutterstock/rickshaw/badge.svg?branch=master" alt="Coverage Status" /></a></p>
+
+<h1 id="rickshaw">Rickshaw</h1>
+
+<p>Rickshaw is a JavaScript toolkit for creating interactive time series graphs, developed at <a href="http://www.shutterstock.com">Shutterstock</a></p>
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#install">Install</a>
+    <ul>
+      <li><a href="#dependencies">Dependencies</a></li>
+    </ul>
+  </li>
+  <li><a href="#rickshawgraph">Rickshaw.Graph</a>
+    - <a href="#element">element</a>
+    - <a href="#series">series</a>
+    - <a href="#renderer">renderer</a>
+    - <a href="#width">width</a>
+    - <a href="#height">height</a>
+    - <a href="#min">min</a>
+    - <a href="#max">max</a>
+    - <a href="#padding">padding</a>
+    - <a href="#interpolation">interpolation</a>
+    - <a href="#stack">stack</a>
+    <ul>
+      <li><a href="#methods">Methods</a>
+        <ul>
+          <li><a href="#render">render()</a></li>
+          <li><a href="#configure">configure()</a></li>
+          <li><a href="#onupdatef">onUpdate(f)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#extensions">Extensions</a></li>
+  <li><a href="#rickshawcolorpalette">Rickshaw.Color.Palette</a>
+    <ul>
+      <li><a href="#color-schemes">Color Schemes</a></li>
+      <li><a href="#interpolation">Interpolation</a></li>
+    </ul>
+  </li>
+  <li><a href="#rickshaw-and-cross-browser-support">Rickshaw and Cross-Browser Support</a></li>
+  <li><a href="#building">Building</a></li>
+  <li><a href="#contributing">Contributing</a></li>
+  <li><a href="#authors">Authors</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Getting started with a simple graph is straightforward.  Here’s the gist:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">graph</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rickshaw</span><span class="p">.</span><span class="nx">Graph</span><span class="p">(</span> <span class="p">{</span>
+  <span class="na">element</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#graph'</span><span class="p">),</span>
+  <span class="na">series</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">color</span><span class="p">:</span> <span class="s1">'steelblue'</span><span class="p">,</span>
+      <span class="na">data</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">23</span><span class="p">},</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">15</span> <span class="p">},</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">79</span> <span class="p">}</span> <span class="p">]</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="na">color</span><span class="p">:</span> <span class="s1">'lightblue'</span><span class="p">,</span>
+      <span class="na">data</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">20</span> <span class="p">},</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">64</span> <span class="p">}</span> <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span> <span class="p">);</span>
+
+<span class="nx">graph</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+</code></pre></div></div>
+<p>See the <a href="http://code.shutterstock.com/rickshaw/">overview</a>, <a href="http://shutterstock.github.com/rickshaw/tutorial/introduction.html">tutorial</a>, and <a href="http://shutterstock.github.com/rickshaw/examples/">examples</a> for more.</p>
+
+<h2 id="install">Install</h2>
+
+<p>In the browser, manually add <code class="highlighter-rouge">rickshaw.min.js</code> and <code class="highlighter-rouge">rickshaw.min.css</code> in the document head.</p>
+
+<p>Alternatively, you can install Rickshaw using <a href="https://bower.io/">Bower</a> or <a href="https://npmjs.com">npm</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># With bower</span>
+bower install rickshaw
+<span class="c"># With npm</span>
+npm install <span class="nt">--save</span> rickshaw
+</code></pre></div></div>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<p>Rickshaw relies on the fantastic <a href="http://mbostock.github.com/d3/">D3 visualization library</a> to do lots of the heavy lifting for stacking and rendering to SVG.</p>
+
+<p>Some extensions require <a href="http://jquery.com">jQuery</a> and <a href="http://jqueryui.com">jQuery UI</a>, but for drawing some basic graphs you’ll be okay without.</p>
+
+<p>Rickshaw uses <a href="https://github.com/tmpvar/jsdom">jsdom</a> to run unit tests in Node to be able to do SVG manipulation. As of the jsdom 7.0.0 release, jsdom requires Node.js 4 or newer <a href="https://github.com/tmpvar/jsdom/blob/master/Changelog.md#700">jsdom changelog</a>. If you want to run the tests on your machine, and you don’t have access to a version of node &gt;= 4.0, you can <code class="highlighter-rouge">npm install jsdom@3</code>  so that you can run the tests using the <a href="https://github.com/tmpvar/jsdom/tree/3.x">3.x branch of jsdom</a>.</p>
+
+<h2 id="rickshawgraph">Rickshaw.Graph</h2>
+
+<p>A Rickshaw graph.  Send an <code class="highlighter-rouge">element</code> reference, <code class="highlighter-rouge">series</code> data, and optionally other properties to the constructor before calling <code class="highlighter-rouge">render()</code> to point the graph.  A listing of properties follows.  Send these as arguments to the constructor, and optionally set them later on already-instantiated graphs with a call to <code class="highlighter-rouge">configure()</code></p>
+
+<h5 id="element">element</h5>
+
+<p>A reference to an HTML element that should hold the graph.</p>
+
+<h5 id="series">series</h5>
+
+<p>Array of objects containing series data to plot.  Each object should contain <code class="highlighter-rouge">data</code> at a minimum, a sorted array of objects each with x and y properties.  Optionally send a <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">color</code> as well.  Some renderers and extensions may also support additional keys.</p>
+
+<h5 id="renderer">renderer</h5>
+
+<p>A string containing the name of the renderer to be used.  Options include <code class="highlighter-rouge">area</code>, <code class="highlighter-rouge">stack</code>, <code class="highlighter-rouge">bar</code>, <code class="highlighter-rouge">line</code>, and <code class="highlighter-rouge">scatterplot</code>.  Defaults to <code class="highlighter-rouge">line</code>. Also see the <code class="highlighter-rouge">multi</code> meta renderer in order to support different renderers per series.</p>
+
+<h5 id="width">width</h5>
+
+<p>Width of the graph in pixels.  Falls back to the width of the <code class="highlighter-rouge">element</code>, or defaults to 400 if the element has no width.</p>
+
+<h5 id="height">height</h5>
+
+<p>Height of the graph in pixels.  Falls back to the height of the <code class="highlighter-rouge">element</code>, or defaults to 250 if the element has no height.</p>
+
+<h5 id="min">min</h5>
+
+<p>Lower value on the Y-axis, or <code class="highlighter-rouge">auto</code> for the lowest value in the series.  Defaults to 0.</p>
+
+<h5 id="max">max</h5>
+
+<p>Highest value on the Y-axis.  Defaults to the highest value in the series.</p>
+
+<h5 id="padding">padding</h5>
+
+<p>An object containing any of <code class="highlighter-rouge">top</code>, <code class="highlighter-rouge">right</code>, <code class="highlighter-rouge">bottom</code>, and <code class="highlighter-rouge">left</code> properties specifying a padding percentage around the extrema of the data in the graph.  Defaults to 0.01 on top for 1% padding, and 0 on other sides. Padding on the bottom only applies when the <code class="highlighter-rouge">yMin</code> is either negative or <code class="highlighter-rouge">auto</code>.</p>
+
+<h5 id="interpolation">interpolation</h5>
+
+<p>Line smoothing / interpolation method (see <a href="https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-line_interpolate">D3 docs</a>); notable options:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">linear</code>: straight lines between points</li>
+  <li><code class="highlighter-rouge">step-after</code>: square steps from point to point</li>
+  <li><code class="highlighter-rouge">cardinal</code>: smooth curves via cardinal splines (default)</li>
+  <li><code class="highlighter-rouge">basis</code>: smooth curves via B-splines</li>
+</ul>
+
+<h5 id="stack">stack</h5>
+
+<p>Allows you to specify whether series should be stacked while in the context of stacking renderers (area, bar, etc).  Defaults to <code class="highlighter-rouge">stack: 'true'</code>. To unstack, <code class="highlighter-rouge">unstack: 'true'</code>.</p>
+
+<h3 id="methods">Methods</h3>
+
+<p>Once you have instantiated a graph, call methods below to get pixels on the screen, change configuration, and set callbacks.</p>
+
+<h5 id="render">render()</h5>
+
+<p>Draw or redraw the graph.</p>
+
+<h5 id="configure">configure()</h5>
+
+<p>Set properties on an instantiated graph.  Specify any properties the constructor accepts, including <code class="highlighter-rouge">width</code> and <code class="highlighter-rouge">height</code> and <code class="highlighter-rouge">renderer</code>.  Call <code class="highlighter-rouge">render()</code> to redraw the graph and reflect newly-configured properties.</p>
+
+<h5 id="onupdatef">onUpdate(f)</h5>
+
+<p>Add a callback to run when the graph is rendered</p>
+
+<h2 id="extensions">Extensions</h2>
+
+<p>Once you have a basic graph, extensions let you add functionality.  See the <a href="http://code.shutterstock.com/rickshaw/">overview</a> and <a href="http://shutterstock.github.com/rickshaw/examples/">examples</a> listing for more.</p>
+
+<ul>
+  <li>
+    <p><strong>Rickshaw.Graph.Legend</strong> - add a basic legend</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.HoverDetail</strong> - show details on hover</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.JSONP</strong> - get data via a JSONP request</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Annotate</strong> - add x-axis annotations</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.RangeSlider</strong> - dynamically zoom on the x-axis with a slider</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.RangeSlider.Preview</strong> - pan and zoom via graphical preview of entire data set</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Axis.Time</strong> - add an x-axis and grid lines with time labels</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Axis.X</strong> - add an x-axis and grid lines with arbitrary labels</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Axis.Y</strong> - add a y-axis and grid lines</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Axis.Y.Scaled</strong> - add a y-axis with an alternate scale</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Behavior.Series.Highlight</strong> - highlight series on legend hover</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Behavior.Series.Order</strong> - reorder series in the stack with drag-and-drop</p>
+  </li>
+  <li>
+    <p><strong>Rickshaw.Graph.Behavior.Series.Toggle</strong> - toggle series on and off through the legend</p>
+  </li>
+</ul>
+
+<h2 id="rickshawcolorpalette">Rickshaw.Color.Palette</h2>
+
+<p>Rickshaw comes with a few color schemes. Instantiate a palette and specify a scheme name, and then call color() on the palette to get each next color.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">palette</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rickshaw</span><span class="p">.</span><span class="nx">Color</span><span class="p">.</span><span class="nx">Palette</span><span class="p">(</span> <span class="p">{</span> <span class="na">scheme</span><span class="p">:</span> <span class="s1">'spectrum2001'</span> <span class="p">}</span> <span class="p">);</span>
+    
+<span class="nx">palette</span><span class="p">.</span><span class="nx">color</span><span class="p">()</span> <span class="c1">// =&gt; first color in the palette</span>
+<span class="nx">palette</span><span class="p">.</span><span class="nx">color</span><span class="p">()</span> <span class="c1">// =&gt; next color in the palette...</span>
+</code></pre></div></div>
+
+<p>Optionally, to palette.color() can take a numeric argument to specify which color from the palette should be used (zero-indexed).  This can be helpful when assigning a color to series of a plot with particular meaning:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">palette</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rickshaw</span><span class="p">.</span><span class="nx">Color</span><span class="p">.</span><span class="nx">Palette</span><span class="p">(</span> <span class="p">{</span> <span class="na">scheme</span><span class="p">:</span> <span class="s1">'colorwheel'</span> <span class="p">}</span> <span class="p">);</span>
+    
+<span class="nx">palette</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// =&gt; first color in the palette - red in this example</span>
+<span class="nx">palette</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// =&gt; third color in the palette - light blue</span>
+</code></pre></div></div>
+
+<h4 id="color-schemes">Color Schemes</h4>
+
+<ul>
+  <li>classic9</li>
+  <li>colorwheel</li>
+  <li>cool</li>
+  <li>munin</li>
+  <li>spectrum14</li>
+  <li>spectrum2000</li>
+  <li>spectrum2001</li>
+</ul>
+
+<h4 id="interpolation-1">Interpolation</h4>
+
+<p>For graphs with more series than palettes have colors, specify an <code class="highlighter-rouge">interpolatedStopCount</code> to the palette constructor.</p>
+
+<h2 id="rickshaw-and-cross-browser-support">Rickshaw and Cross-Browser Support</h2>
+
+<p>This library works in modern browsers and Internet Explorer 9+.</p>
+
+<p>Rickshaw relies on the HTMLElement#classList API, which isn’t natively supported in Internet Explorer 9.  Rickshaw adds support by including a shim which implements the classList API by extending the HTMLElement prototype.  You can disable this behavior if you like, by setting <code class="highlighter-rouge">RICKSHAW_NO_COMPAT</code> to a true value before including the library.</p>
+
+<h2 id="building">Building</h2>
+
+<p>For building, we need <a href="http://nodejs.org">Node</a> and <a href="http://npmjs.org">npm</a>.  Running <code class="highlighter-rouge">make</code> should get you going with any luck.</p>
+
+<p>After doing a build you can run the tests with the command: <code class="highlighter-rouge">npm test</code></p>
+
+<p>If you’d like to do your own minification, you will need to give a hint to the minifier to leave variables named <code class="highlighter-rouge">$super</code> named <code class="highlighter-rouge">$super</code>.  For example, with uglify on the command line:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ uglify-js --reserved-names "$super" rickshaw.js &gt; rickshaw.min.js
+</code></pre></div></div>
+
+<p>Or a sample configuration with <code class="highlighter-rouge">grunt-contrib-uglify</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">uglify</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">options</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">mangle</span><span class="p">:</span> <span class="p">{</span> <span class="nl">except</span><span class="p">:</span> <span class="p">[</span><span class="s2">"$super"</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Pull requests are always welcome!  Please follow a few guidelines:</p>
+
+<ul>
+  <li>Please don’t include updated versions of <code class="highlighter-rouge">rickshaw.js</code> and <code class="highlighter-rouge">rickshaw.min.js</code>.  Just changes to the source files will suffice.</li>
+  <li>Add a unit test or two to cover the proposed changes</li>
+  <li>Do as the Romans do and stick with existing whitespace and formatting conventions (i.e., tabs instead of spaces, etc)</li>
+  <li>Consider adding a simple example under <code class="highlighter-rouge">examples/</code> that demonstrates any new functionality</li>
+</ul>
+
+<p>Please note that all interactions with Shutterstock follow the <a href="/bower_components/rickshaw/CODE_OF_CONDUCT.md">Contributor Covenant Code of Conduct</a>.</p>
+
+<h2 id="authors">Authors</h2>
+
+<p>This library was developed by David Chester, Douglas Hunter, and Silas Sewell at <a href="http://www.shutterstock.com">Shutterstock</a></p>
+
+<h2 id="license">License</h2>
+
+<p>Copyright (C) 2011-2017 by Shutterstock Images, LLC</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>

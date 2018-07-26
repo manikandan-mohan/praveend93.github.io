@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <meta content="Introduction to Convolutional Neural Networks" name="description">
+  
+  
+    <meta name="keywords" content="Machine Learning,Deep Learning">
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|First Kaggle Submission - Deep learning
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                    	
+                        	<button class="btn btn-white btn-xs" type="button">Ml</button>
+                        
+                    </div>
+                    <div class="text-center article-title">
+                    <span class="text-muted"><i class="fa fa-clock-o"></i> 7 Jan 2017</span>
+                        <h1>
+                            First Kaggle Submission - Deep learning
+                        </h1>
+                    </div>
+                    	<h1 id="audience">Audience</h1>
+
+<p>This tutorial is intended to deep learning aspirants. CLI coding, Python and an understanding about Artificial neural networks is necessary for the reader to comprehend the tutorial.</p>
+
+<p><a href="https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/">Competition link</a></p>
+
+<p>Task: Use pre-trained VGG16 (Visual Geometry Group) model to classify between Cats and Dogs.</p>
+
+<h3 id="to-do">To-Do</h3>
+
+<ul>
+  <li>Install Kaggle-CLI</li>
+  <li>configure username, password, competiton-id</li>
+  <li>download data</li>
+  <li>segregate data in to train, valid, test sets. Also have a small sample set and test algo with sample set.</li>
+  <li>Sample set contains sample train, sample valid</li>
+  <li>Fine tune VGG 16 to classify the data set’s requirements.</li>
+  <li>submit to Kaggle.</li>
+</ul>
+
+<h3 id="kaggle-cli-installation-and-configuration">Kaggle CLI Installation and configuration</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    sudo pip install kaggle-cli
+</code></pre></div></div>
+
+<p>Configuring cli to a username, password and competition. This config file is available in</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ~/.kaggle-cli/config 
+</code></pre></div></div>
+
+<p>you can edit this file as you start your new competition.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    kg config -g -u 'username' -p 'password' -c 'dogs-vs-cats-redux-kernels-edition'
+</code></pre></div></div>
+
+<p>finally create directory called <strong>redux</strong> under data as <strong>data/redux</strong> and download the competition data. Unzip the files. Before downloading accept to competition rules in the website</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    kg download
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">utils</span><span class="p">;</span> <span class="nb">reload</span><span class="p">(</span><span class="n">utils</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Using gpu device 0: Tesla K80 (CNMeM is disabled, cuDNN 5103)
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/sandbox/cuda/__init__.py:600: UserWarning: Your cuDNN version is more recent than the one Theano officially supports. If you see any problems, try updating Theano or downgrading cuDNN to version 5.
+  warnings.warn(warn)
+Using Theano backend.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span>
+</code></pre></div></div>
+
+<h2 id="segregate-data">Segregate Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">LESSON_HOME_DIR</span> <span class="o">=</span> <span class="n">current_dir</span>
+<span class="n">DATA_HOME_DIR</span> <span class="o">=</span> <span class="n">current_dir</span><span class="o">+</span><span class="s">'/data/redux'</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">cd</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/ubuntu/courses/deeplearning1/nbs/data/redux
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">cd</span> <span class="n">train</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/ubuntu/courses/deeplearning1/nbs/data/redux/train
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span>
+<span class="c"># also create sample train and sample test</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>25001
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># select all the file paths ending with *jpg</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s">'*.jpg'</span><span class="p">)</span>
+<span class="c"># shuffle file paths</span>
+<span class="n">shuf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">shuf</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['dog.7046.jpg', 'cat.11353.jpg', 'cat.9465.jpg', 'dog.4110.jpg', 'dog.1306.jpg'], 
+      dtype='|S13')
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># rename 2000 random files</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">shuf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">'/valid/'</span><span class="o">+</span><span class="n">shuf</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># check number of files in train now</span>
+<span class="o">%</span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23001
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># lets try to make our model run for a sample. copy files from train and valid to sample/train, sample/valid</span>
+
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copyfile</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># we are in /data/redux/train</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s">'*.jpg'</span><span class="p">)</span>
+<span class="n">shuf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">copyfile</span><span class="p">(</span><span class="n">shuf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">'/sample/train/'</span><span class="o">+</span><span class="n">shuf</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">cd</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/ubuntu/courses/deeplearning1/nbs/data/redux/valid
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2001
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">g</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s">'*.jpg'</span><span class="p">)</span>
+<span class="n">shuf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">copyfile</span><span class="p">(</span><span class="n">shuf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">'/sample/valid/'</span><span class="o">+</span><span class="n">shuf</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">cd</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span>
+<span class="o">%</span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/ubuntu/courses/deeplearning1/nbs/data/redux/sample/train
+201
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">cd</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span>
+<span class="o">%</span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/ubuntu/courses/deeplearning1/nbs/data/redux/sample/valid
+51
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">cd</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/ubuntu/courses/deeplearning1/nbs/data/redux
+</code></pre></div></div>
+
+<p>Keras require that the images of same classification label should be in the same folder. So lets put all cat images and dog images in one folder.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">dogs</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">dogs</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">dogs</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">dogs</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">cat</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">dog</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">dogs</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">cat</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">dog</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">dogs</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">cat</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">dog</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">dogs</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">cat</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">cats</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">dog</span><span class="o">*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">valid</span><span class="o">/</span><span class="n">dogs</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">ls</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">train</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0m[01;34mcats[0m/  [01;34mdogs[0m/
+</code></pre></div></div>
+
+<h2 id="the-deep-learning-lets-see-how-deep-it-is">The Deep Learning! Lets see how deep it is..</h2>
+
+<p>For this submission, My objective is to just run a Deep learning program. All I am trying to know are the wrappers that solves the classification problem via Deep learning.</p>
+
+<p>Before coding, I wanted to understand the problem that I am trying to solve. Here is the gist I came up with to understand the problem better.</p>
+
+<h2 id="convolutional-neural-networks">Convolutional Neural Networks</h2>
+
+<p><a href="https://postimg.org/image/dvdqkhf8d/"><img src="https://s6.postimg.org/x0gzu8twh/nn_example_624x218.png" alt="nn_example-624x218.png" /></a></p>
+
+<p>The above is a working heuristic of Convolutional neural network. This <a href="https://devblogs.nvidia.com/parallelforall/accelerate-machine-learning-cudnn-deep-neural-network-library/">article</a> is a brilliant starting point to know about evolution from fully-connected to Convolutional networks. It also justfies the need for GPUs in Machine learning and gives a brief introduction to CuDNN.</p>
+
+<p>In nutshell, we are trying to simulate the way our own neural network works. To put in perspective, A billion neurons works in parallel to understand an image like Cat which has been previously identified and stored in our memory. This needs lot of computational power. GPUs give this computational power to process lot of data and adjust tons of weight to fit the data.</p>
+
+<h2 id="cudnn">CuDNN</h2>
+
+<p>NVIDIA cuDNN is a GPU-accelerated library of primitives for DNNs.  It provides tuned implementations of routines that arise frequently in DNN applications, such as:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Convolution
+* Pooling
+* SoftMax
+* Neural activation functions
+</code></pre></div></div>
+
+<p>The overall machine learning framework looks something of this sort.</p>
+
+<p><a href="https://postimg.org/image/gmsexcod9/"><img src="https://s6.postimg.org/nq0acytsx/Deep_Learing_Architecture.png" alt="DeepLearingArchitecture.png" /></a></p>
+
+<p>We won’t be delving into the deeper layers of the framework. In this tutorial we will try to figure out how to make Keras communicate with the below layers.</p>
+
+<p>Important functions and Data Structures of Keras:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> * Model - Data structure for modelling the CNN
+ 
+ * Sequential - A type of data structure
+ 
+ * input_dim - the dimension of the input tensor/vector.
+ 
+ * input_batch_dim - the dimension of bacth of inputs to be sent to Keras
+ 
+ * compile - A function which accepts objective function, optimization function and metrics to be performed in the neural network. We should specify compile function before training the model. The compile function defines the learning process for the model.
+ 
+ * merge - Merge two Sequential models into one.There are many ways two sequential model output tensors can be merged. Please refer Keras documentation. The merged data can again modeled as a sequential model.
+ 
+ * Objective functions, Optimizers and metrics are of different types. Please see the documentation.
+ 
+ * fit - Once you specify the model, learning process we can train the model for known labels.
+ 
+ * train_on_batch - We can also train on a particular batch
+ 
+ * Evaluate - function to evaluate the performance
+ 
+ * nb_epoch - number of iterations in the training process.
+</code></pre></div></div>
+
+<p>If we know the working of all these functions, we have covered pretty much of keras. Beauty of keras is that it hids all the mathematical complexities involved in developing a deep convolutional neural network.</p>
+
+<p>I am using a VGG16 python class. I have documented to an extent of what every function does.</p>
+
+<p><strong>Build and train a VGG Model. Finetune it after building</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">vgg16</span> <span class="kn">import</span> <span class="n">Vgg16</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vgg</span> <span class="o">=</span> <span class="n">Vgg16</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batches</span> <span class="o">=</span> <span class="n">vgg</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span><span class="n">path</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/train"</span><span class="p">)</span>
+<span class="n">val_batches</span> <span class="o">=</span> <span class="n">vgg</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span><span class="n">path</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/valid"</span><span class="p">)</span>
+<span class="n">vgg</span><span class="o">.</span><span class="n">finetune</span><span class="p">(</span><span class="n">batches</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found 23000 images belonging to 2 classes.
+Found 2000 images belonging to 2 classes.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vgg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">batches</span><span class="p">,</span><span class="n">val_batches</span><span class="p">,</span><span class="n">nb_epoch</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch 1/1
+23000/23000 [==============================] - 615s - loss: 0.0972 - acc: 0.9757 - val_loss: 0.0698 - val_acc: 0.9810
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">results</span>
+<span class="n">vgg</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save_weights</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/results/ft1.h5"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>predict the unlabled test images and assign a class</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">mkdir</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">unknown</span>
+<span class="o">%</span><span class="n">mv</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">test</span><span class="o">/*.</span><span class="n">jpg</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">unknown</span>
+<span class="c"># We have an namesake folder introduced because thats the folder format of keras test method.</span>
+<span class="o">%</span><span class="n">ls</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">unknown</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">ls</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span><span class="o">/</span><span class="n">test</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0m[01;34munknown[0m/
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batches</span><span class="p">,</span><span class="n">pred</span> <span class="o">=</span> <span class="n">vgg</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/test"</span><span class="p">,</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found 12500 images belonging to 1 classes.
+</code></pre></div></div>
+
+<h1 id="submission-to-kaggle">Submission to Kaggle</h1>
+
+<p>Now we have found the classes for the test set, we can submit the solution to Kaggle. But Kaggle expects the solution in a format. Lets see how it looks.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">ls</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0m[01;34mresults[0m/  sample_submission.csv  [01;31mtest.zip[0m  [01;31mtrain.zip[0m
+[01;34msample[0m/   [01;34mtest[0m/                  [01;34mtrain[0m/    [01;34mvalid[0m/
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">head</span> <span class="n">sample_submission</span><span class="o">.</span><span class="n">csv</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id,label
+1,0.5
+2,0.5
+3,0.5
+4,0.5
+5,0.5
+6,0.5
+7,0.5
+8,0.5
+9,0.5
+</code></pre></div></div>
+
+<p>Here Id is the name of the unknown class image file and label gives the probability of the image being in a class. This is our submission format.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">batches</span><span class="p">),</span><span class="nb">type</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(keras.preprocessing.image.DirectoryIterator, numpy.ndarray)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># get filenames from directory iterator</span>
+
+<span class="n">filenames</span> <span class="o">=</span> <span class="n">batches</span><span class="o">.</span><span class="n">filenames</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">filenames</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['unknown/9292.jpg',
+ 'unknown/12026.jpg',
+ 'unknown/9688.jpg',
+ 'unknown/4392.jpg',
+ 'unknown/779.jpg']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">save_array</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/results/filenames.dat"</span><span class="p">,</span><span class="n">arr</span><span class="o">=</span><span class="n">filenames</span><span class="p">)</span>
+<span class="n">save_array</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/results/test_preds.dat"</span><span class="p">,</span><span class="n">arr</span><span class="o">=</span><span class="n">pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># load from local here after</span>
+<span class="n">filenames</span><span class="o">=</span><span class="n">load_array</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/results/filenames.dat"</span><span class="p">)</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">load_array</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/results/test_preds.dat"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># use same probabilities but penalize super confident predictions</span>
+<span class="n">is_dog</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">a_min</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span><span class="n">a_max</span><span class="o">=</span><span class="mf">0.975</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="n">f</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"."</span><span class="p">)])</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ids</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[9292, 12026, 9688, 4392, 779]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">is_dog</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(12500, 12500)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">ids</span><span class="p">,</span><span class="n">is_dog</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sub</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[  9.2920e+03,   2.5000e-02],
+       [  1.2026e+04,   4.4612e-01],
+       [  9.6880e+03,   2.5000e-02],
+       [  4.3920e+03,   2.5000e-02],
+       [  7.7900e+02,   9.7500e-01]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">comments</span><span class="o">=</span><span class="s">''</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">d,</span><span class="si">%.5</span><span class="s">f'</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="s">'id,label'</span><span class="p">,</span><span class="n">X</span><span class="o">=</span><span class="n">sub</span><span class="p">,</span><span class="n">fname</span><span class="o">=</span><span class="s">"sub_karthik.csv"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">ls</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0m[01;34mresults[0m/  sample_submission.csv  [01;34mtest[0m/     [01;34mtrain[0m/     [01;34mvalid[0m/
+[01;34msample[0m/   sub_karthik.csv        [01;31mtest.zip[0m  [01;31mtrain.zip[0m
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">FileLink</span>
+<span class="n">FileLink</span><span class="p">(</span><span class="s">'sub_karthik.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><a href="sub_karthik.csv" target="_blank">sub_karthik.csv</a><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">head</span> <span class="s">"sub_karthik.csv"</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id,label
+9292,0.02500
+12026,0.44612
+9688,0.02500
+4392,0.02500
+779,0.97500
+2768,0.97500
+2399,0.02500
+12225,0.75026
+10947,0.02500
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">kg</span> <span class="n">submit</span> <span class="s">'sub_karthik.csv'</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Starting new HTTPS connection (1): www.kaggle.com
+</code></pre></div></div>
+
+<h2 id="visualising-results">Visualising results</h2>
+
+<p>This part of the experiment is very important. We want to understand what makes the model predict the images correctly and what makes it predict wrong. In any image classification task, Jeremy Howard advises to follow the underlying steps to make yourself better understand the model and finetune its parameters accordingly. This is a standard template</p>
+
+<ul>
+  <li>look into few examples of images in random that we got right.</li>
+  <li>Few examples of images in random that we got wrong.</li>
+  <li>Most correct labels in each class classified right. (Images with models assuring highest possibility of belonging to say Cat class when they are actually Cat.)</li>
+  <li>Most incorrect labels in each class classified wrong.(Images with models assuring highest possibility of belonging to say Cat class when they are actually Dog.)</li>
+  <li>Most uncertain labels. (Labels with confusion to incline towards a class or other)</li>
+</ul>
+
+<p>This time we will be working with validation set. Because the validation set has the correct answers.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># We have already loaded weights ft3.h5</span>
+<span class="n">batches_valid</span><span class="p">,</span><span class="n">prob_valid</span> <span class="o">=</span> <span class="n">vgg</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/valid"</span><span class="p">,</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found 2000 images belonging to 2 classes.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">batches_valid</span><span class="p">),</span><span class="nb">type</span><span class="p">(</span><span class="n">prob_valid</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(keras.preprocessing.image.DirectoryIterator, numpy.ndarray)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">filenames_valid</span> <span class="o">=</span> <span class="n">batches_valid</span><span class="o">.</span><span class="n">filenames</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>We already have 98% of accuracy in validation set.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># we are predicting is_dog in competition.</span>
+<span class="n">expected_labels</span> <span class="o">=</span> <span class="n">val_batches</span><span class="o">.</span><span class="n">classes</span> <span class="c">#0 or 1</span>
+
+<span class="c">#Round our predictions to 0/1 to generate labels</span>
+<span class="c"># our_predictions are for probability</span>
+<span class="n">our_predictions</span> <span class="o">=</span> <span class="n">prob_valid</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="c"># our_labels determines the class label.</span>
+<span class="n">our_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">our_predictions</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># number of images to view at once</span>
+<span class="n">n_view</span> <span class="o">=</span> <span class="mi">4</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Helper function to plot images by index in the validation set</span>
+<span class="c">#Plots is a helper function in utils.py</span>
+<span class="k">def</span> <span class="nf">plots_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">titles</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">plots</span><span class="p">([</span><span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span> <span class="o">+</span><span class="s">"/valid/"</span><span class="o">+</span> <span class="n">filenames_valid</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">idx</span><span class="p">],</span> <span class="n">titles</span><span class="o">=</span><span class="n">titles</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ol>
+  <li>look into few examples of images in random that we got right.</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># we are getting zeroth column because its a tuple.</span>
+<span class="n">random_correct_labels</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">expected_labels</span><span class="o">==</span><span class="n">our_labels</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">random_correct_labels</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1971,)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># check_accuracy</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">random_correct_labels</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">expected_labels</span><span class="p">))</span>
+<span class="c"># adhering to our model accuracy!</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.9855
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">idx</span> <span class="o">=</span> <span class="n">permutation</span><span class="p">(</span><span class="n">random_correct_labels</span><span class="p">[:</span><span class="n">n_view</span><span class="p">])</span>
+<span class="c"># titles are nothing but probabilities of being a cat.</span>
+<span class="n">plots_idx</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="n">idx</span><span class="p">,</span><span class="n">titles</span><span class="o">=</span><span class="n">our_predictions</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/9kckbk865/"><img src="https://s6.postimg.org/3w69ko3tt/output_90_0.png" alt="output_90_0.png" /></a></p>
+
+<p>#2 Few Incorrect labels</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">random_incorrect_labels</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">expected_labels</span><span class="o">!=</span><span class="n">our_labels</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">random_incorrect_labels</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(29,)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">idx</span> <span class="o">=</span> <span class="n">permutation</span><span class="p">(</span><span class="n">random_incorrect_labels</span><span class="p">[:</span><span class="n">n_view</span><span class="p">])</span>
+<span class="c"># titles are nothing but probabilities of being a cat.</span>
+<span class="n">plots_idx</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="n">idx</span><span class="p">,</span><span class="n">titles</span><span class="o">=</span><span class="n">our_predictions</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/squcshe1p/"><img src="https://s6.postimg.org/tgd54ueld/output_93_0.png" alt="output_93_0.png" /></a></p>
+
+<p>we have to interpret these images. These images illustrates how trivial the task of classification to humans, but are complex for computers to learn.</p>
+
+<ol>
+  <li>the given image is labeled as cat. But probability of being a cat is as close to 6X10^-8. This attributes to the concept of Occlusion.</li>
+  <li>the second image is a cat. But labled as dog.This corresponds to the concept of Deformation.</li>
+  <li>Third image has the same problem as first. it is labeled as Dog. But its actually a cat.</li>
+  <li>Fourth image corresponds to the concept of Background clutter. To get better Idea, see the image below.</li>
+</ol>
+
+<p><a href="https://postimg.org/image/a8gtgrhi5/"><img src="https://s6.postimg.org/71m9x4x29/challenges.jpg" alt="challenges.jpg" /></a></p>
+
+<p>#3a The images we most confident were cats, and are actually cats</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># when our_lables are 0, we have predicted cat.</span>
+<span class="c"># this statement only get the indexes of labels that are correctly predicted as cat.</span>
+<span class="n">correct_cats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">our_labels</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">our_labels</span><span class="o">==</span><span class="n">expected_labels</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">"Found </span><span class="si">%</span><span class="s">d confident correct cats labels"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">correct_cats</span><span class="p">)</span>
+<span class="c"># argsort sorts the indexes based on the value in ascending order.</span>
+<span class="c"># example np.argsort([3,1,2]) = [1,2,0]</span>
+<span class="c"># we then reverse it.</span>
+<span class="c"># most_correct_cats gives indexes of most correct cat lables. [::-1] is used to get the indexes in descending order</span>
+<span class="c"># put our prediction indexes in correct cats. It gives the indexes of most correct cats.</span>
+<span class="c"># get our predictions of correct cat and get the most correct cat</span>
+<span class="n">most_correct_cats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">our_predictions</span><span class="p">[</span><span class="n">correct_cats</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="n">n_view</span><span class="p">]</span>
+<span class="n">plots_idx</span><span class="p">(</span><span class="n">correct_cats</span><span class="p">[</span><span class="n">most_correct_cats</span><span class="p">],</span> <span class="n">our_predictions</span><span class="p">[</span><span class="n">correct_cats</span><span class="p">][</span><span class="n">most_correct_cats</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found 979 confident correct cats labels
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/8xi8zs0nx/"><img src="https://s6.postimg.org/u75vamgyp/output_96_1.png" alt="output_96_1.png" /></a></p>
+
+<p>#3b. The images we most confident were dogs, and are actually dogs</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># same as above</span>
+<span class="n">correct_dogs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">our_labels</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">our_labels</span><span class="o">==</span><span class="n">expected_labels</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">"Found </span><span class="si">%</span><span class="s">d confident correct dogs labels"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">correct_dogs</span><span class="p">)</span>
+<span class="n">most_correct_dogs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">our_predictions</span><span class="p">[</span><span class="n">correct_dogs</span><span class="p">])[:</span><span class="n">n_view</span><span class="p">]</span>
+<span class="n">plots_idx</span><span class="p">(</span><span class="n">correct_dogs</span><span class="p">[</span><span class="n">most_correct_dogs</span><span class="p">],</span> <span class="n">our_predictions</span><span class="p">[</span><span class="n">correct_dogs</span><span class="p">][</span><span class="n">most_correct_dogs</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found 992 confident correct dogs labels
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/bsvc6n4nx/"><img src="https://s6.postimg.org/iw37m9a3l/output_98_1.png" alt="output_98_1.png" /></a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#4a. The images we were most confident were cats, but are actually dogs</span>
+<span class="c"># label 0 is cat. get labels which we predicted as cat but are actually dogs.</span>
+<span class="n">incorrect_cats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">our_labels</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">our_labels</span><span class="o">!=</span><span class="n">expected_labels</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">"Found </span><span class="si">%</span><span class="s">d incorrect cats"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">incorrect_cats</span><span class="p">)</span>
+<span class="c"># if there are any, follow same steps as above cells</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">incorrect_cats</span><span class="p">):</span>
+    <span class="n">most_incorrect_cats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">our_predictions</span><span class="p">[</span><span class="n">incorrect_cats</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="n">n_view</span><span class="p">]</span>
+    <span class="n">plots_idx</span><span class="p">(</span><span class="n">incorrect_cats</span><span class="p">[</span><span class="n">most_incorrect_cats</span><span class="p">],</span> <span class="n">our_predictions</span><span class="p">[</span><span class="n">incorrect_cats</span><span class="p">][</span><span class="n">most_incorrect_cats</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found 19 incorrect cats
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/7xry42li5/"><img src="https://s6.postimg.org/bu5a026ht/output_99_1.png" alt="output_99_1.png" /></a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#4b. The images we were most confident were dogs, but are actually cats</span>
+<span class="c"># same as above</span>
+<span class="n">incorrect_dogs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">our_labels</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">our_labels</span><span class="o">!=</span><span class="n">expected_labels</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">"Found </span><span class="si">%</span><span class="s">d incorrect dogs"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">incorrect_dogs</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">incorrect_dogs</span><span class="p">):</span>
+    <span class="n">most_incorrect_dogs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">our_predictions</span><span class="p">[</span><span class="n">incorrect_dogs</span><span class="p">])[:</span><span class="n">n_view</span><span class="p">]</span>
+    <span class="n">plots_idx</span><span class="p">(</span><span class="n">incorrect_dogs</span><span class="p">[</span><span class="n">most_incorrect_dogs</span><span class="p">],</span> <span class="n">our_predictions</span><span class="p">[</span><span class="n">incorrect_dogs</span><span class="p">][</span><span class="n">most_incorrect_dogs</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found 10 incorrect dogs
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/l37ga6fdp/"><img src="https://s6.postimg.org/pp3kij0wx/output_100_1.png" alt="output_100_1.png" /></a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#5. The most uncertain labels (ie those with probability closest to 0.5).</span>
+<span class="c"># 0.5 -0.5 becomes 0. 1-0.5 becomes 0.5. 0-0.5 becomes -0.5 absolute of these values becomes positive.</span>
+<span class="c"># argsort of these values brings in most uncertain lables first.</span>
+<span class="n">most_uncertain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">our_predictions</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plots_idx</span><span class="p">(</span><span class="n">most_uncertain</span><span class="p">[:</span><span class="n">n_view</span><span class="p">],</span> <span class="n">our_predictions</span><span class="p">[</span><span class="n">most_uncertain</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/4gpw13mfx/"><img src="https://s6.postimg.org/xvvka3qzl/output_101_0.png" alt="output_101_0.png" /></a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">expected_labels</span><span class="p">,</span> <span class="n">our_labels</span><span class="p">)</span>
+<span class="n">cm</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[979,  10],
+       [ 19, 992]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">batches_valid</span><span class="o">.</span><span class="n">class_indices</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[979  10]
+ [ 19 992]]
+</code></pre></div></div>
+
+<p><a href="https://postimg.org/image/h9e010y1p/"><img src="https://s6.postimg.org/bl7pa4tpd/output_103_1.png" alt="output_103_1.png" /></a></p>
+
+<h1 id="fantastic-we-are-done">Fantastic We are done.</h1>
+
+<p>We can delve deep into Categorical cross entropy loss and internals of Keras and theano in the coming lessons!</p>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <h5 style="display: inline;">Tags:</h5>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">blog</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">Machine learning</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">Deep Learning</button>
+                                
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small text-right">
+                                <h5>Stats:</h5>
+                                <div> 
+                                
+                                <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="http://karthikBalasubramanian.github.io/ml/2017/01/07/karthik_b_redux.html">0</span> comments
+                                
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <br>
+                    <!-- <div class="row">
+                        <div class="col-lg-12">-->
+                            <!-- donate -->
+                            <!-- 
+                            <br> -->
+                            <!-- share -->
+                            <!-- 
+                            <br> -->
+                            <!-- comment -->
+                            
+
+
+<div id="disqus_thread"></div>
+<script>
+/** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+	/*
+	var disqus_config = function () { this.page.url = PAGE_URL;
+	// Replace PAGE_URL with your page's canonical URL variable this.page.identifier = PAGE_IDENTIFIER;
+	// Replace PAGE_IDENTIFIER with your page's unique identifier variable };
+	*/
+	(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//https-karthikbalasubramanian-github-io.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+ 
+                        <!-- </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>

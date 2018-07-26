@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|CHANGELOG
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <h1 id="changelog">CHANGELOG</h1>
+
+<h2 id="version-321---2016-10-10">Version 3.2.1 - 2016-10-10</h2>
+
+<ul>
+  <li>Ensure NPM package includes only required files.</li>
+  <li>Now available in Packagist <a href="https://packagist.org/packages/benpickles/peity">https://packagist.org/packages/benpickles/peity</a>.</li>
+  <li>No functional changes.</li>
+</ul>
+
+<h2 id="version-320---2015-4-17">Version 3.2.0 - 2015-4-17</h2>
+
+<ul>
+  <li>Add an <code class="highlighter-rouge">after</code> hook that can be used to decorate a chart.</li>
+</ul>
+
+<h2 id="version-312---2015-4-14">Version 3.1.2 - 2015-4-14</h2>
+
+<ul>
+  <li>Allow line charts with no fill, just the line.</li>
+</ul>
+
+<h2 id="version-311---2015-2-11">Version 3.1.1 - 2015-2-11</h2>
+
+<ul>
+  <li>Ensure a donut’s default inner radius honours percentage dimensions by deriving it from its calculated radius.</li>
+</ul>
+
+<h2 id="version-310---2015-1-19">Version 3.1.0 - 2015-1-19</h2>
+
+<ul>
+  <li>Bring back per-chart reading settings from data attributes but with a slightly different interface: all settings are stored on the <code class="highlighter-rouge">data-peity</code> attribute as JSON.</li>
+</ul>
+
+<h2 id="version-303---2015-1-16">Version 3.0.3 - 2015-1-16</h2>
+
+<ul>
+  <li>Don’t allow negative or zero values to blow up a pie chart.</li>
+</ul>
+
+<h2 id="version-302---2014-10-17">Version 3.0.2 - 2014-10-17</h2>
+
+<ul>
+  <li>Fix <code class="highlighter-rouge">max</code>/<code class="highlighter-rouge">min</code> option when it’s a string.</li>
+</ul>
+
+<h2 id="version-301---2014-10-16">Version 3.0.1 - 2014-10-16</h2>
+
+<ul>
+  <li>jQuery &gt; 1.6.2 doesn’t like <code class="highlighter-rouge">undefined</code> being passed to <code class="highlighter-rouge">#attr()</code>.</li>
+</ul>
+
+<h2 id="version-300---2014-10-15">Version 3.0.0 - 2014-10-15</h2>
+
+<ul>
+  <li>Remove the ability to read options from data attributes.</li>
+  <li>Add donut chart type.</li>
+  <li>Switch from <code class="highlighter-rouge">diameter</code> pie chart option to <code class="highlighter-rouge">radius</code>.</li>
+  <li>Expose the internally-used scale functions to the outside world.</li>
+  <li>Rename <code class="highlighter-rouge">gap</code> bar chart option to <code class="highlighter-rouge">padding</code>. It is now specified as a portion of the width of each bar and is present on both sides.</li>
+</ul>
+
+<h2 id="version-205---2014-10-15">Version 2.0.5 - 2014-10-15</h2>
+
+<ul>
+  <li>Changes to make the minified version 147 bytes smaller!</li>
+</ul>
+
+<h2 id="version-204---2014-10-8">Version 2.0.4 - 2014-10-8</h2>
+
+<ul>
+  <li>Fix a null max argument being calculated as zero when all values are negative.</li>
+  <li>Ensure that a null min argument means that the minimum is calculated from a chart’s values.</li>
+</ul>
+
+<h2 id="version-203---2014-4-29">Version 2.0.3 - 2014-4-29</h2>
+
+<ul>
+  <li>Don’t blow up drawing a line chart of all zeros.</li>
+</ul>
+
+<h2 id="version-202---2014-3-26">Version 2.0.2 - 2014-3-26</h2>
+
+<ul>
+  <li>Fix misaligned bar when its value is negative and equal to the minimum.</li>
+</ul>
+
+<h2 id="version-201---2014-1-22">Version 2.0.1 - 2014-1-22</h2>
+
+<ul>
+  <li>Ensure bars are positioned correctly when a bar chart’s values are all equal its minimum value.</li>
+</ul>
+
+<h2 id="version-200---2014-1-3">Version 2.0.0 - 2014-1-3</h2>
+
+<ul>
+  <li>Switch from <code class="highlighter-rouge">&lt;canvas&gt;</code> to <code class="highlighter-rouge">&lt;svg&gt;</code>.</li>
+  <li>Update jQuery dependency from 1.4.4 to 1.6.2 due to problems fetching a <code class="highlighter-rouge">&lt;svg&gt;</code> element’s dimensions in Firefox.</li>
+  <li>Rename <code class="highlighter-rouge">colour</code>/<code class="highlighter-rouge">colours</code> options to <code class="highlighter-rouge">fill</code>.</li>
+  <li>Rename <code class="highlighter-rouge">spacing</code> bar chart option to <code class="highlighter-rouge">gap</code>.</li>
+  <li>Rename <code class="highlighter-rouge">strokeColour</code> line chart option to <code class="highlighter-rouge">stroke</code>.</li>
+</ul>
+
+<h2 id="version-121---2013-11-21">Version 1.2.1 - 2013-11-21</h2>
+
+<ul>
+  <li>Ensure a line chart’s outline doesn’t spill off the canvas.</li>
+</ul>
+
+<h2 id="version-120---2013-3-11">Version 1.2.0 - 2013-3-11</h2>
+
+<ul>
+  <li>Easier CSS targeting of Peity-created canvas elements.</li>
+  <li>Percentage dimensions (<code class="highlighter-rouge">width: "100%"</code>) now work.</li>
+</ul>
+
+<h2 id="version-112---2013-2-23">Version 1.1.2 - 2013-2-23</h2>
+
+<ul>
+  <li>Fix reference to <code class="highlighter-rouge">devicePixelRatio</code> - thanks <a href="https://github.com/kcivey">@kcivey</a>.</li>
+</ul>
+
+<h2 id="version-111---2013-2-5">Version 1.1.1 - 2013-2-5</h2>
+
+<ul>
+  <li>component.json for Bower.</li>
+  <li>Finally in the jQuery plugin registry: <a href="http://plugins.jquery.com/peity/">http://plugins.jquery.com/peity/</a></li>
+</ul>
+
+<h2 id="version-110---2013-2-1">Version 1.1.0 - 2013-2-1</h2>
+
+<ul>
+  <li>Multiple calls to <code class="highlighter-rouge">peity()</code> on the same element now update the existing chart rather than creating a new one.</li>
+  <li>Zero values in a bar chart are now present as a single-pixel bar.</li>
+</ul>
+
+<h2 id="version-100---2012-12-4">Version 1.0.0 - 2012-12-4</h2>
+
+<ul>
+  <li>Spacing between bars can now be configured.</li>
+  <li>Pie charts can now be formed of more than 2 segments.</li>
+  <li>The colours of bar and pie charts can now be set dynamically based on their value.</li>
+  <li>Re-write of the internals so that the actual <code class="highlighter-rouge">&lt;canvas&gt;</code> element is only created once and <code class="highlighter-rouge">$.wrapInner</code> is no longer used to contain everything in a separate <code class="highlighter-rouge">&lt;span&gt;</code>.</li>
+  <li>Peity now automatically reads data-* attributes and passes them as options when instantiating a chart. <a href="https://github.com/buunguyen">@buunguyen</a></li>
+</ul>
+
+<h2 id="version-061---2012-10-12">Version 0.6.1 - 2012-10-12</h2>
+
+<ul>
+  <li>Workaround for Linux/Chrome bug when using #arc to draw a full circle not having a zero starting angle.</li>
+</ul>
+
+<h2 id="version-060---2012-1-27">Version 0.6.0 - 2012-1-27</h2>
+
+<ul>
+  <li>Line and bar charts now support negative numbers.</li>
+</ul>
+
+<h2 id="version-050---2011-12-6">Version 0.5.0 - 2011-12-6</h2>
+
+<ul>
+  <li>Fix - rename radius to diameter.</li>
+  <li>Allow line charts with no stroke.</li>
+  <li>Support for iPhone 4 retina display.</li>
+</ul>
+
+<h2 id="version-041---2011-9-29">Version 0.4.1 - 2011-9-29</h2>
+
+<ul>
+  <li>For a line graph with a single value show a straight line instead of nothing.</li>
+</ul>
+
+<h2 id="version-040---2011-6-30">Version 0.4.0 - 2011-6-30</h2>
+
+<ul>
+  <li>Allow options to be passed a function called with a <code class="highlighter-rouge">this</code> value of the element in question.</li>
+</ul>
+
+<h2 id="version-035---2011-5-12">Version 0.3.5 - 2011-5-12</h2>
+
+<ul>
+  <li>Fix that if the numerator of a pie is zero an empty pie is drawn instead of nothing. <a href="https://github.com/munikho">@munikho</a></li>
+</ul>
+
+<h2 id="version-034---2011-5-12">Version 0.3.4 - 2011-5-12</h2>
+
+<ul>
+  <li>Remove the little border that appears around the slice of a pie when the slice has a darker colour than the plate. <a href="https://github.com/munikho">@munikho</a></li>
+</ul>
+
+<h2 id="version-033---2011-3-20">Version 0.3.3 - 2011-3-20</h2>
+
+<ul>
+  <li>Tweaks to aid minification.</li>
+</ul>
+
+<h2 id="version-032---2010-5-9">Version 0.3.2 - 2010-5-9</h2>
+
+<ul>
+  <li>Don’t blow up if <code class="highlighter-rouge">&lt;canvas&gt;</code> isn’t supported.</li>
+</ul>
+
+<h2 id="version-031---2010-5-8">Version 0.3.1 - 2010-5-8</h2>
+
+<ul>
+  <li>Add “strokeWidth” option to line charts.</li>
+  <li>Add “max” option to line and bar chart types.</li>
+</ul>
+
+<h2 id="version-030---2010-5-6">Version 0.3.0 - 2010-5-6</h2>
+
+<ul>
+  <li>Add line and bar graph types and expose an interface for adding more. <a href="https://github.com/ismasan">@ismasan</a> and me.</li>
+</ul>
+
+<h2 id="version-020---2010-4-29">Version 0.2.0 - 2010-4-29</h2>
+
+<p>First official version. Thanks to <a href="https://github.com/ismasan">@ismasan</a> and <a href="https://github.com/olivernn">@olivernn</a> for adding support for the “change” event and making it work in Firefox respectively.</p>
+
+<h2 id="birthday---2009-11-20">Birthday - 2009-11-20</h2>
+
+<p>It works!</p>
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>

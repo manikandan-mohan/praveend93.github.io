@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|toastr
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <h1 id="toastr">toastr</h1>
+<p><strong>toastr</strong> is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.</p>
+
+<p><a href="https://travis-ci.org/CodeSeven/toastr"><img src="https://travis-ci.org/CodeSeven/toastr.svg" alt="Build Status" /></a>
+Browser testing provided by BrowserStack.</p>
+
+<h2 id="current-version">Current Version</h2>
+<p>2.1.3</p>
+
+<h2 id="demo">Demo</h2>
+<ul>
+  <li>Demo can be found at http://codeseven.github.io/toastr/demo.html</li>
+  <li><a href="http://plnkr.co/edit/6W9URNyyp2ItO4aUWzBB?p=preview">Demo using FontAwesome icons with toastr</a></li>
+</ul>
+
+<h2 id="cdnjs"><a href="https://cdnjs.com/libraries/toastr.js">CDNjs</a></h2>
+<p>Toastr is hosted at CDN JS</p>
+
+<h4 id="debug">Debug</h4>
+<ul>
+  <li><a href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js">//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js</a></li>
+  <li><a href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css</a></li>
+</ul>
+
+<h4 id="minified">Minified</h4>
+<ul>
+  <li><a href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js</a></li>
+  <li><a href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css</a></li>
+</ul>
+
+<h2 id="install">Install</h2>
+
+<h4 id="nuget-gallery"><a href="http://nuget.org/packages/toastr">NuGet Gallery</a></h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Install-Package toastr
+</code></pre></div></div>
+
+<h4 id="bower"><a href="http://bower.io/search/?q=toastr">Bower</a></h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bower install toastr
+</code></pre></div></div>
+
+<h4 id="npm"><a href="https://www.npmjs.com/package/toastr">npm</a></h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save toastr
+</code></pre></div></div>
+
+<h2 id="wiki-and-change-log">Wiki and Change Log</h2>
+<p><a href="https://github.com/CodeSeven/toastr/wiki">Wiki including Change Log</a></p>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+
+<p>####Animation Changes
+The following animations options have been deprecated and should be replaced:</p>
+
+<ul>
+  <li>Replace <code class="highlighter-rouge">options.fadeIn</code> with <code class="highlighter-rouge">options.showDuration</code></li>
+  <li>Replace <code class="highlighter-rouge">options.onFadeIn</code> with <code class="highlighter-rouge">options.onShown</code></li>
+  <li>Replace <code class="highlighter-rouge">options.fadeOut</code> with <code class="highlighter-rouge">options.hideDuration</code></li>
+  <li>Replace <code class="highlighter-rouge">options.onFadeOut</code> with <code class="highlighter-rouge">options.onHidden</code></li>
+</ul>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<h3 id="3-easy-steps">3 Easy Steps</h3>
+<p>For other API calls, see the <a href="http://codeseven.github.io/toastr/demo.html">demo</a>.</p>
+
+<ol>
+  <li>
+    <p>Link to toastr.css <code class="highlighter-rouge">&lt;link href="toastr.css" rel="stylesheet"/&gt;</code></p>
+  </li>
+  <li>
+    <p>Link to toastr.js <code class="highlighter-rouge">&lt;script src="toastr.js"&gt;&lt;/script&gt;</code></p>
+  </li>
+  <li>
+    <p>use toastr to display a toast for info, success, warning or error</p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// Display an info toast with no title</span>
+ <span class="nx">toastr</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'Are you the 6 fingered man?'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="other-options">Other Options</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Display a warning toast, with no title</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">warning</span><span class="p">(</span><span class="s1">'My name is Inigo Montoya. You killed my father, prepare to die!'</span><span class="p">)</span>
+
+<span class="c1">// Display a success toast, with a title</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">'Have fun storming the castle!'</span><span class="p">,</span> <span class="s1">'Miracle Max Says'</span><span class="p">)</span>
+
+<span class="c1">// Display an error toast, with a title</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'I do not think that word means what you think it means.'</span><span class="p">,</span> <span class="s1">'Inconceivable!'</span><span class="p">)</span>
+
+<span class="c1">// Immediately remove current toasts without using animation</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span>
+
+<span class="c1">// Remove current toasts using animation</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+
+<span class="c1">// Override global options</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">'We do have the Kapua suite available.'</span><span class="p">,</span> <span class="s1">'Turtle Bay Resort'</span><span class="p">,</span> <span class="p">{</span><span class="na">timeOut</span><span class="p">:</span> <span class="mi">5000</span><span class="p">})</span>
+</code></pre></div></div>
+
+<h3 id="escape-html-characters">Escape HTML characters</h3>
+<p>In case you want to escape HTML charaters in title and message</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>toastr.options.escapeHtml = true;
+</code></pre></div></div>
+
+<h3 id="close-button">Close Button</h3>
+<p>Optionally enable a close button</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeButton</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Optionally override the close button’s HTML.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeHtml</span> <span class="o">=</span> <span class="s1">'&lt;button&gt;&lt;i class="icon-off"&gt;&lt;/i&gt;&lt;/button&gt;'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>You can also override the CSS/LESS for <code class="highlighter-rouge">#toast-container .toast-close-button</code></p>
+
+<p>Optionally override the hide animation when the close button is clicked (falls back to hide configuration).</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeMethod</span> <span class="o">=</span> <span class="s1">'fadeOut'</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeDuration</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeEasing</span> <span class="o">=</span> <span class="s1">'swing'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="display-sequence">Display Sequence</h3>
+<p>Show newest toast at bottom (top is default)</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">newestOnTop</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="callbacks">Callbacks</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Define a callback for when the toast is shown/hidden/clicked</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">onShown</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span> <span class="p">}</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">onHidden</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'goodbye'</span><span class="p">);</span> <span class="p">}</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'clicked'</span><span class="p">);</span> <span class="p">}</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">onCloseClick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'close button clicked'</span><span class="p">);</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="animation-options">Animation Options</h3>
+<p>Toastr will supply default animations, so you do not have to provide any of these settings. However you have the option to override the animations if you like.</p>
+
+<p>####Easings
+Optionally override the animation easing to show or hide the toasts. Default is swing. swing and linear are built into jQuery.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">showEasing</span> <span class="o">=</span> <span class="s1">'swing'</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">hideEasing</span> <span class="o">=</span> <span class="s1">'linear'</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeEasing</span> <span class="o">=</span> <span class="s1">'linear'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Using the jQuery Easing plugin (http://www.gsgd.co.uk/sandbox/jquery/easing/)</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">showEasing</span> <span class="o">=</span> <span class="s1">'easeOutBounce'</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">hideEasing</span> <span class="o">=</span> <span class="s1">'easeInBack'</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeEasing</span> <span class="o">=</span> <span class="s1">'easeInBack'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>####Animation Method
+Use the jQuery show/hide method of your choice. These default to fadeIn/fadeOut. The methods fadeIn/fadeOut, slideDown/slideUp, and show/hide are built into jQuery.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">showMethod</span> <span class="o">=</span> <span class="s1">'slideDown'</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">hideMethod</span> <span class="o">=</span> <span class="s1">'slideUp'</span><span class="p">;</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">closeMethod</span> <span class="o">=</span> <span class="s1">'slideUp'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>###Prevent Duplicates
+Rather than having identical toasts stack, set the preventDuplicates property to true. Duplicates are matched to the previous toast based on their message content.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">preventDuplicates</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>###Timeouts
+Control how toastr interacts with users by setting timeouts appropriately. Timeouts can be disabled by setting them to 0.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">timeOut</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="c1">// How long the toast will display without user interaction</span>
+<span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">extendedTimeOut</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">// How long the toast will display after a user hovers over it</span>
+</code></pre></div></div>
+
+<p>###Progress Bar
+Visually indicate how long before a toast expires.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">progressBar</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="rtl">rtl</h3>
+<p>Flip the toastr to be displayed properly for right-to-left languages.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">toastr</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">rtl</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> 
+</code></pre></div></div>
+
+<h2 id="building-toastr">Building Toastr</h2>
+
+<p>To build the minified and css versions of Toastr you will need <a href="http://nodejs.org">node</a> installed. (Use Homebrew or Chocolatey.)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g gulp karma-cli
+npm install
+</code></pre></div></div>
+
+<p>At this point the dependencies have been installed and you can build Toastr</p>
+
+<ul>
+  <li>Run the analytics <code class="highlighter-rouge">gulp analyze</code></li>
+  <li>Run the test <code class="highlighter-rouge">gulp test</code></li>
+  <li>Run the build <code class="highlighter-rouge">gulp</code></li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>For a pull request to be considered it must resolve a bug, or add a feature which is beneficial to a large audience.</p>
+
+<p>Pull requests must pass existing unit tests, CI processes, and add additional tests to indicate successful operation of a new feature, or the resolution of an identified bug.</p>
+
+<p>Requests must be made against the <code class="highlighter-rouge">develop</code> branch. Pull requests submitted against the <code class="highlighter-rouge">master</code> branch will not be considered.</p>
+
+<p>All pull requests are subject to approval by the repository owners, who have sole discretion over acceptance or denial.</p>
+
+<h2 id="authors">Authors</h2>
+<p><strong>John Papa</strong></p>
+
+<ul>
+  <li><a href="http://twitter.com/John_Papa">http://twitter.com/John_Papa</a></li>
+</ul>
+
+<p><strong>Tim Ferrell</strong></p>
+
+<ul>
+  <li><a href="http://twitter.com/ferrell_tim">http://twitter.com/ferrell_tim</a></li>
+</ul>
+
+<p><strong>Hans Fjällemark</strong></p>
+
+<ul>
+  <li><a href="http://twitter.com/hfjallemark">http://twitter.com/hfjallemark</a></li>
+</ul>
+
+<h2 id="credits">Credits</h2>
+<p>Inspired by https://github.com/Srirangan/notifer.js/.</p>
+
+<h2 id="copyright">Copyright</h2>
+<p>Copyright © 2012-2015</p>
+
+<h2 id="license">License</h2>
+<p>toastr is under MIT license - http://www.opensource.org/licenses/mit-license.php</p>
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>

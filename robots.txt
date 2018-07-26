@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: <http://karthikBalasubramanian.github.io/sitemap.xml>

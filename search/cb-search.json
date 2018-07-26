@@ -1,0 +1,36 @@
+{
+	"code" : 0 ,
+	"data" : [
+	 
+	{
+		"title" : "A Visualization tutorial - 2017-01-20",
+		"url" : "/ml/2017/01/20/AltairViz.html"
+	}
+	
+	,
+	
+    
+	{
+		"title" : "Image Classification - 2017-01-15",
+		"url" : "/ml/2017/01/15/K_Nearest_neighbor_final.html"
+	}
+	
+	,
+	
+    
+	{
+		"title" : "First Kaggle Submission - Deep learning - 2017-01-07",
+		"url" : "/ml/2017/01/07/karthik_b_redux.html"
+	}
+	
+	,
+	
+    
+	{
+		"title" : "Challenges faced by CIOs in Big Data projects - 2016-12-26",
+		"url" : "/writing/2016/12/26/CIO.html"
+	}
+	
+    
+	]
+}

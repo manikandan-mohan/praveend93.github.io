@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <meta content="How tough is it for a CIO to handle multiple Big Data projects at a time in an enterprise." name="description">
+  
+  
+    <meta name="keywords" content="Big data,CIOs">
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|Challenges faced by CIOs in Big Data projects
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                    	
+                        	<button class="btn btn-white btn-xs" type="button">Writing</button>
+                        
+                    </div>
+                    <div class="text-center article-title">
+                    <span class="text-muted"><i class="fa fa-clock-o"></i> 26 Dec 2016</span>
+                        <h1>
+                            Challenges faced by CIOs in Big Data projects
+                        </h1>
+                    </div>
+                    	<h2 id="introduction"><strong>Introduction</strong></h2>
+
+<p>Big data is the practice of mining large datasets with the hope of realizing valuable business insights. Technology practitioners in IT industry believe the prospective value of Big Data is substantial, but many organizations are struggling to reap benefits out of it. According to recent survey <a href="http://wikibon.org/wiki/v/Enterprises_Struggling_to_Derive_Maximum_Value_from_Big_Data">Kelly, 2013</a>, 46% of Big data investors (companies basically) report that they have only realized fractional value from their big data deployments. 2% of the investors have declared that they have failed to derive any value from Big Data investments. 55% of Big Data projects don’t get completed and many falls short of their objectives.</p>
+
+<p>But the nature of these projects are so uncertain in the beginning that it is difficult to predict potential business benefits out of it. The technology is niche, the spending is more than traditional IT projects and it works different for different business use cases.  That is, there is no standardized way of doing Big data projects in a given industry. It has certainly elevated the role of CIOs and have made them more accountable, visible and responsible to a business’ growth.</p>
+
+<p>This paper deals about the challenges that CIOs are facing in running Big data projects.  I will conclude with possible solutions to enhance benefits out of Big Data projects.</p>
+
+<h2 id="how-companies-are-spending-on-big-data"><strong>How companies are spending on Big Data?</strong></h2>
+
+<p>Every department in a business is trying to optimize the traditional ways and they believe that technology is the only solace. Nowadays, each department has a budget to spend on technology. Big data is the buzz word in the technology industry and hence there is exponential increase in spending on Big data projects. Therefore, in a given business (Ex. Retail) there are many departments operating many Big data projects.  There are Marketing teams operating on Customer insights, enhancing customer experience etc., store management departments trying to optimize its space arrangement at stores using Big data, Operations and Supply Chain Management teams trying to increase operational efficiency etc., In most of the cases, the departments are bypassing IT <a href="http://www.informationweek.com/: http://www.informationweek.com/big-data/big-data-analytics/big-data-and-roi-an-uneasy-pairing-for-cios/a/d-id/1322050">Korzeniowski, 2015</a>  to roll out new big data projects. This makes life difficult for CIO as he has to regulate, concentrate and realize multiple big data initiatives in a given period of time. There are two types of challenges that CIO generally face in Big data projects. They are Perennial and Practical Challenges.</p>
+
+<h2 id="practical-and-perennial-challenges"><strong>Practical and Perennial Challenges</strong></h2>
+
+<p>Once a new technology becomes popular in an IT market, it gives rise to lots of new vendors who create off-the-shelf products to cater business needs. These vendors help In-house IT firms to fasten that technology implementation to their business. Of course, Big data gave rise to lot of Vendors. Vendors came up with new products time and again to cater business needs. But this time, it was not easy for IT teams to tie these technology products to the business. There were so many products and all of them were immature. Otherwise, they used to work well in pilot projects but were unable to cater business needs on a large scale. Also, there is a scarcity of technology practitioners (Data administrators, Data Scientist, Big data developers) to support large scale Big data deployments. Scarcity of standardized technological resources and qualified human resources are the practical challenges for the CIOs to implement successful Big data programs.</p>
+
+<p>Use cases are very important in defining a technology’s usage in a business. A wrong use case means that there is no alignment between the business and the technology. Most failed companies in Big data projects have started with a wrong use case. It takes a long time for practitioners to first understand the mistake. By the time, the money, efforts and the time spent on these mistaken projects are too high. CIOs can’t afford so much time, money and resources on these projects and will be questionable by the executive members of the board even though the problem is out of his control. This is the perennial problem we are talking about.</p>
+
+<h2 id="shadow-it-concept"><strong>Shadow IT concept</strong></h2>
+
+<p>Shadow IT is a term often used to describe information-technology systems and solutions built and used inside organizations without explicit organizational approval. As number of departments in a business started Big data projects, they started utilizing these kind of off-the-shelf products bypassing IT department. This led to increase in usage of auxiliary big data products and services (Cloud services) with no involvement from IT department. Traditionally IT department has to facilitate such services to other departments. But now, Lines of Business (LoB) has exponentially increased the utilization of public cloud services to get the work done. While accessing such services, these departments don’t care about the security considerations that they have to look into, leading to increased security risks, compliance concerns and hidden costs <a href="http://blogs.cisco.com/: http://blogs.cisco.com/cloud/shadow-it-and-the-cio-dilemma">Earle, 2015</a>.</p>
+
+<h2 id="shadow-it-and-its-problems"><strong>Shadow IT and its Problems</strong></h2>
+
+<p>Big data projects support the pervasiveness of Shadow IT into a business environment. Why? Because there are many public cloud services available in the internet that improves the agility of these projects. Hence it is very important for a CIO to devise compliance and security measures to counteract threats from this public data. Recently cisco made a study on CIOs awareness level on Shadow IT services that are utilized by employees and LoB of different companies <a href="http://www.informationweek.com/cloud/shadow-it-its-much-worse-than-you-think/a/d-id/1321637">Froehlich, 2015</a>. CIOs and IT heads estimated a total of 56 services on an average. But actually that sample set was using around 730 cloud services (regardless of the industry). The sad news to CIOs is that, this trend is only going to increase over the period of time.</p>
+
+<p>Why is this amount of shadow IT services usage very dangerous? Shadow IT leads to increase in organizational risk. CIOs should facilitate LoB and the employees by bringing these IT services out of their shadows. It is important for a CIO to devise a Hybrid model for cloud service utility and approve an expansive list of these services to legalize their usage. This way employees and LoB wont circumvent the IT department to use the cloud services. It also helps the CIO reduce riskiness in the business.</p>
+
+<p>So far we have seen the implicit and explicit challenges that CIOs face in managing the Big data projects. Now we shall look into some of the best practices that are followed by CIOs in these projects.</p>
+
+<h2 id="best-practices"><strong>Best Practices</strong></h2>
+
+<p>CIOs interested in realizing Big Data to drive impactful   business outcomes must be prepared to deal with practical challenges that we spoke about. (skilled Big Data practitioners and immature technology).</p>
+
+<p>In order to overcome these obstacles and derive significant value from Big Data, CIOs should consider engaging professional organizations consulting on Big data and/or cloud services. The cost of engaging Big Data services will most often be more than offset by the increase in value attained by successful Big Data implementations. Professional consultants can also help CIOs in identifying initial Big Data use cases that can serve as proof-of-concepts for driving future projects.</p>
+
+<p>Effective data management is an important strategy for success in Big data projects. There are two types of clouds. Public cloud from where LoB and employees try to consume data. This is unsecure cloud. Then there is private cloud, which are the militarized zones of company data that CIOs traditionally safeguard. The CIOs should device a hybrid cloud strategy, that embraces best of both the worlds. Cisco calls this strategy as <strong>CCC</strong> <a href="http://blogs.cisco.com/: http://blogs.cisco.com/cloud/shadow-it-and-the-cio-dilemma">Earle, 2015</a>,  that is the Choice, Control and Compliance.  This strategy effectively gives the CIOs to promise same levels of security and compliance in the public cloud as they showcase with their militarized data.</p>
+
+<p>Statistics say that 41% <a href="http://www.informationweek.com/: http://www.informationweek.com/big-data/big-data-analytics/big-data-and-roi-an-uneasy-pairing-for-cios/a/d-id/1322050">Korzeniowski, 2015</a> of companies spend on Big data without knowing the return. Clearly, CIO has become very busy executive and he can’t be accountable for each and every department’s experimentation of big data on his companies. But, it is his responsibility to regulate departments and advise them to start the projects as pilots.</p>
+
+<p>Many reports have confirmed on fact that Big data is not a hype. So it only makes sense for the CIO in developing In-house talent. CIOs can integrate with vendors (suppliers of Big Data products) to create Big data competence centers in the company. This will reduce cost of hiring talents, develops mature Big data practitioners over time and improve relationships with vendors.</p>
+
+<p>Finally, CIOs have to make it clear to the executive board that ROI on Big data spending is with respect to a project. Not all projects will give same levels of payback in a given instance. Some might take time to mature, some might reap benefits immediately. If CIO believes that a project has lot of potential, He should always be in a position to convince the board, regardless of the time it takes to show the results. But at the same time, he should manage to set some expectations year on year to the board to continue the funding.</p>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <h5 style="display: inline;">Tags:</h5>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">blog</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">Writing</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">Big data</button>
+                                
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small text-right">
+                                <h5>Stats:</h5>
+                                <div> 
+                                
+                                <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="http://karthikBalasubramanian.github.io/writing/2016/12/26/CIO.html">0</span> comments
+                                
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <br>
+                    <!-- <div class="row">
+                        <div class="col-lg-12">-->
+                            <!-- donate -->
+                            <!-- 
+                            <br> -->
+                            <!-- share -->
+                            <!-- 
+                            <br> -->
+                            <!-- comment -->
+                            
+
+
+<div id="disqus_thread"></div>
+<script>
+/** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+	/*
+	var disqus_config = function () { this.page.url = PAGE_URL;
+	// Replace PAGE_URL with your page's canonical URL variable this.page.identifier = PAGE_IDENTIFIER;
+	// Replace PAGE_IDENTIFIER with your page's unique identifier variable };
+	*/
+	(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//https-karthikbalasubramanian-github-io.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+ 
+                        <!-- </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>

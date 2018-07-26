@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|metismenu
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <h1 id="metismenu-------">metismenu <a href="https://www.npmjs.com/package/metismenu"><img src="https://img.shields.io/npm/v/metismenu.svg?style=flat" alt="NPM version" /></a> <a href="https://npmjs.org/package/metismenu"><img src="https://img.shields.io/npm/dm/metismenu.svg?style=flat" alt="NPM monthly downloads" /></a>  <a href="https://npmjs.org/package/metismenu"><img src="https://img.shields.io/npm/dt/metismenu.svg?style=flat" alt="NPM total downloads" /></a> <a href="https://travis-ci.org/onokumus/metismenu"><img src="https://img.shields.io/travis/onokumus/metismenu.svg?style=flat&amp;label=Travis" alt="Linux Build Status" /></a> <a href="https://www.jsdelivr.com/package/npm/metismenu"><img src="https://data.jsdelivr.com/v1/package/npm/metismenu/badge" alt="" /></a> <a href="https://packagist.org/packages/onokumus/metismenu"><img src="https://img.shields.io/packagist/v/onokumus/metismenu.svg" alt="Packagist" /></a></h1>
+
+<blockquote>
+  <p>A jQuery menu plugin</p>
+</blockquote>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#getting-started">Getting started</a>
+    <ul>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#download">Download</a></li>
+    </ul>
+  </li>
+  <li><a href="#usage">Usage</a>
+    <ul>
+      <li><a href="#stopping-list-opening-on-certain-elements">Stopping list opening on certain elements</a></li>
+    </ul>
+  </li>
+  <li><a href="#options">Options</a>
+    <ul>
+      <li><a href="#toggle">toggle</a></li>
+      <li><a href="#dispose">dispose</a></li>
+      <li><a href="#activeclass">activeClass</a></li>
+      <li><a href="#collapseclass">collapseClass</a></li>
+      <li><a href="#collapseinclass">collapseInClass</a></li>
+      <li><a href="#collapsingclass">collapsingClass</a></li>
+      <li><a href="#preventdefault">preventDefault</a></li>
+      <li><a href="#triggerelement">triggerElement</a></li>
+      <li><a href="#parenttrigger">parentTrigger</a></li>
+      <li><a href="#submenu">subMenu</a></li>
+    </ul>
+  </li>
+  <li><a href="#events">Events</a></li>
+  <li><a href="#testing">Testing</a></li>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#about">About</a>
+    <ul>
+      <li><a href="#related-projects">Related projects</a></li>
+      <li><a href="#contributors">Contributors</a></li>
+      <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#release-history">Release History</a></li>
+      <li><a href="#author">Author</a></li>
+      <li><a href="#license">License</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><em>(TOC generated by <a href="https://github.com/verbose/verb">verb</a> using <a href="https://github.com/jonschlinkert/markdown-toc">markdown-toc</a>)</em></p>
+
+<h2 id="getting-started">Getting started</h2>
+<h3 id="install">Install</h3>
+<p>Install with <a href="https://www.npmjs.com/">npm</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm install <span class="nt">--save</span> metismenu
+</code></pre></div></div>
+
+<p>Install with <a href="https://yarnpkg.com">yarn</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>yarn add metismenu
+</code></pre></div></div>
+
+<p>Install with <a href="https://bower.io/">bower</a></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bower install metismenu <span class="nt">--save</span>
+</code></pre></div></div>
+
+<p>Install with <a href="https://getcomposer.org/">composer</a></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>composer require onokumus/metismenu:dev-master
+</code></pre></div></div>
+
+<h3 id="download">Download</h3>
+<p><a href="https://github.com/onokumus/metisMenu/archive/master.zip">download</a></p>
+
+<h2 id="usage">Usage</h2>
+
+<ol>
+  <li>Include metismenu StyleSheet</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.1/metisMenu.min.css"</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- OR --&gt;</span>  
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/metismenu/dist/metisMenu.min.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Include jQuery</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="c">&lt;!-- OR --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/jquery"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Include metisMenu plugin’s code</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.1/metisMenu.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="c">&lt;!-- OR --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/metismenu"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Add class <code class="highlighter-rouge">metismenu</code> to unordered list</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"metismenu"</span> <span class="na">id=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<ol>
+  <li>Make expand/collapse controls accessible</li>
+</ol>
+
+<blockquote>
+  <p>Be sure to add <code class="highlighter-rouge">aria-expanded</code> to the element <code class="highlighter-rouge">a</code> and the following <code class="highlighter-rouge">ul</code>. This attribute explicitly defines the current state of the collapsible element to screen readers and similar assistive technologies. If the collapsible element is closed by default, it should have a value of <code class="highlighter-rouge">aria-expanded="false"</code>. If you’ve set the collapsible element’s parent <code class="highlighter-rouge">li</code> element to be open by default using the <code class="highlighter-rouge">active</code> class, set <code class="highlighter-rouge">aria-expanded="true"</code> on the control instead. The plugin will automatically toggle this attribute based on whether or not the collapsible element has been opened or closed.</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"metismenu"</span> <span class="na">id=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-expanded=</span><span class="s">"true"</span><span class="nt">&gt;</span>Menu 1<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">aria-expanded=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      ...
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Menu 2<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+      ...
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    ...
+    <span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<ol>
+  <li>Arrow Options</li>
+</ol>
+
+<blockquote>
+  <p>add <code class="highlighter-rouge">has-arrow</code> class to <code class="highlighter-rouge">a</code> element</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"metismenu"</span> <span class="na">id=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"has-arrow"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-expanded=</span><span class="s">"true"</span><span class="nt">&gt;</span>Menu 1<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">aria-expanded=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"has-arrow"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Menu 2<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  ...
+  <span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Call the plugin:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="stopping-list-opening-on-certain-elements">Stopping list opening on certain elements</h3>
+<p>Setting aria-disabled=”true” in the <code class="highlighter-rouge">&lt;a&gt;</code> element as shown will stop metisMenu opening the menu for that particular list. This can be changed dynamically and will be obeyed correctly:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span><span class="nt">&gt;</span>List 1<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h2 id="options">Options</h2>
+
+<h4 id="toggle">toggle</h4>
+<p>Type: <code class="highlighter-rouge">Boolean</code>
+Default: <code class="highlighter-rouge">true</code></p>
+
+<p>For auto collapse support.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">toggle</span><span class="p">:</span> <span class="kc">false</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="dispose">dispose</h4>
+<p>Type: <code class="highlighter-rouge">String</code>
+Default: <code class="highlighter-rouge">null</code></p>
+
+<p>For stop and destroy metisMenu.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">(</span><span class="s1">'dispose'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="activeclass">activeClass</h4>
+<p>Type: <code class="highlighter-rouge">String</code>
+Default: <code class="highlighter-rouge">active</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">activeClass</span><span class="p">:</span> <span class="s1">'active'</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="collapseclass">collapseClass</h4>
+<p>Type: <code class="highlighter-rouge">String</code>
+Default: <code class="highlighter-rouge">collapse</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">collapseClass</span><span class="p">:</span> <span class="s1">'collapse'</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="collapseinclass">collapseInClass</h4>
+<p>Type: <code class="highlighter-rouge">String</code>
+Default: <code class="highlighter-rouge">in</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">collapseInClass</span><span class="p">:</span> <span class="s1">'in'</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="collapsingclass">collapsingClass</h4>
+<p>Type: <code class="highlighter-rouge">String</code>
+Default: <code class="highlighter-rouge">collapsing</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">collapsingClass</span><span class="p">:</span> <span class="s1">'collapsing'</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="preventdefault">preventDefault</h4>
+<p>Type: <code class="highlighter-rouge">Boolean</code>
+Default: <code class="highlighter-rouge">true</code></p>
+
+<blockquote>
+  <p>Prevents or allows dropdowns’ onclick events after expanding/collapsing.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+     <span class="na">preventDefault</span><span class="p">:</span> <span class="kc">false</span>
+   <span class="p">});</span>
+</code></pre></div></div>
+
+<p><em>since from version 2.7.0</em></p>
+
+<h4 id="triggerelement">triggerElement</h4>
+<p>Type: <code class="highlighter-rouge">jQuery selector</code>
+Default: <code class="highlighter-rouge">a</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">triggerElement</span><span class="p">:</span> <span class="s1">'.nav-link'</span> <span class="c1">// bootstrap 4</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="parenttrigger">parentTrigger</h4>
+<p>Type: <code class="highlighter-rouge">jQuery selector</code>
+Default: <code class="highlighter-rouge">li</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">parentTrigger</span><span class="p">:</span> <span class="s1">'.nav-item'</span> <span class="c1">// bootstrap 4</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="submenu">subMenu</h4>
+<p>Type: <code class="highlighter-rouge">jQuery selector</code>
+Default: <code class="highlighter-rouge">ul</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">(</span><span class="s2">"#menu"</span><span class="p">).</span><span class="nx">metisMenu</span><span class="p">({</span>
+   <span class="na">subMenu</span><span class="p">:</span> <span class="s1">'.nav.flex-column'</span> <span class="c1">// bootstrap 4</span>
+ <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="events">Events</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Event Type</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>show.metisMenu</td>
+      <td>This event fires immediately when the <code class="highlighter-rouge">_show</code> instance method is called.</td>
+    </tr>
+    <tr>
+      <td>shown.metisMenu</td>
+      <td>This event is fired when a collapse <code class="highlighter-rouge">ul</code> element has been made visible to the user (will wait for CSS transitions to complete).</td>
+    </tr>
+    <tr>
+      <td>hide.metisMenu</td>
+      <td>This event is fired immediately when the <code class="highlighter-rouge">_hide</code> method has been called.</td>
+    </tr>
+    <tr>
+      <td>hidden.metisMenu</td>
+      <td>This event is fired when a collapse <code class="highlighter-rouge">ul</code> element has been hidden from the user (will wait for CSS transitions to complete).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="testing">Testing</h2>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm install
+<span class="nv">$ </span>grunt serve
+</code></pre></div></div>
+
+<h2 id="demo">Demo</h2>
+<p><a href="http://mm.onokumus.com">http://mm.onokumus.com</a></p>
+
+<p>Contains a simple HTML file to demonstrate metisMenu plugin.</p>
+
+<h2 id="about">About</h2>
+
+<h3 id="related-projects">Related projects</h3>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="https://www.npmjs.com/package/chl">chl</a>: flexbox admin layout</td>
+          <td><a href="https://github.com/chaldene/chl#readme" title="flexbox admin layout">homepage</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="https://www.npmjs.com/package/elektron">elektron</a>: An Admin Toolkit</td>
+          <td><a href="https://github.com/onokumus/elektron#readme" title="An Admin Toolkit">homepage</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="https://www.npmjs.com/package/onoffcanvas">onoffcanvas</a>: An offcanvas plugin</td>
+          <td><a href="https://github.com/onokumus/onoffcanvas#readme" title="An offcanvas plugin">homepage</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="https://www.npmjs.com/package/twbuttons">twbuttons</a>: alexwolfe/Buttons for Twitter Bootstrap 3</td>
+          <td><a href="https://github.com/onokumus/twbuttons" title="alexwolfe/Buttons for Twitter Bootstrap 3">homepage</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="contributors">Contributors</h3>
+<p>| <strong>Commits</strong> | <strong>Contributor</strong> |<br />
+| — | — |<br />
+| 117 | <a href="https://github.com/onokumus">onokumus</a> |<br />
+| 8   | <a href="https://github.com/diegozhu">diegozhu</a> |<br />
+| 4   | <a href="https://github.com/sinabs">sinabs</a> |<br />
+| 2   | <a href="https://github.com/arthurtalkgoal">arthurtalkgoal</a> |<br />
+| 2   | <a href="https://github.com/PeterDaveHello">PeterDaveHello</a> |<br />
+| 2   | <a href="https://github.com/kalidema">kalidema</a> |<br />
+| 2   | <a href="https://github.com/AndrewEastwood">AndrewEastwood</a> |<br />
+| 2   | <a href="https://github.com/rgnevashev">rgnevashev</a> |<br />
+| 1   | <a href="https://github.com/chriswiggins">chriswiggins</a> |<br />
+| 1   | <a href="https://github.com/jmagnusson">jmagnusson</a> |<br />
+| 1   | <a href="https://github.com/LukasDrgon">LukasDrgon</a> |<br />
+| 1   | <a href="https://github.com/Cediddi">Cediddi</a> |<br />
+| 1   | <a href="https://github.com/capynet">capynet</a> |</p>
+
+<h3 id="contributing">Contributing</h3>
+<p>Pull requests and stars are always welcome. For bugs and feature requests, <a href="../../issues/new">please create an issue</a>.</p>
+
+<p>Please read the <a href=".github/contributing.md">contributing guide</a> for advice on opening issues, pull requests, and coding standards.</p>
+
+<h3 id="release-history">Release History</h3>
+<p>|<strong>DATE</strong>      |<strong>VERSION</strong>   |<strong>CHANGES</strong>|
+|————–|————–|———–|
+|2017-10-30    |v2.7.1        |added check in complete()-callback to break when menu was disposed #150|
+|2017-03-08    |v2.7.0        |fixed <code class="highlighter-rouge">has-arrow</code> class border color &amp; added new 3 options|
+|2017-02-23    |v2.6.3        |fixed #129|
+|2017-02-02    |v2.6.2        |doubleTapToGo option is deprecated|
+|2016-12-06    |v2.6.1        |fix require.js|
+|2016-11-29    |v2.6.0        |dispose support|
+|2016-05-06    |v2.5.2        |fix Menu failed to remove collapsing class|
+|2016-05-06    |v2.5.1        |fixed bootstrap conflict|
+|2016-03-31    |v2.5.0        |Event support|
+|2016-03-11    |v2.4.3        |create meteor package|
+|2016-03-04    |v2.4.2        |back to version 2.4.0|
+|2016-03-03    |v2.4.1        |<del>Transition element passed to methods</del> (removed)|
+|2016-01-25    |v2.4.0        |Support AMD / Node / CommonJS|
+|2016-01-08    |v2.3.0        |Adding aria-disabled=true to the link element prevents the dropdown from opening|
+|2015-09-27    |v2.2.0        |Events supported &amp; added preventDefault options|
+|2015-08-06    |v2.1.0        |RTL &amp; <code class="highlighter-rouge">aria-expanded</code> attribute &amp; TypeScript type definitions support|
+|2015-07-25    |v2.0.3        |When the active item has doubleTapToGo should not collapse|
+|2015-05-23    |v2.0.2        |<a href="https://github.com/onokumus/metisMenu/issues/34#issuecomment-104656754">fixed</a>|
+|2015-05-22    |v2.0.1        |changeable classname support|
+|2015-04-03    |v2.0.0        |Remove Bootstrap dependency|
+|2015-03-24    |v1.1.3        |composer support|
+|2014-11-01    |v1.1.3        |Bootstrap 3.3.0|
+|2014-07-07    |v1.1.0	      |Add double tap functionality|
+|2014-06-24    |v1.0.3	      |cdnjs support &amp; rename plugin|
+|2014-06-18    |v1.0.3        |Create grunt task|
+|2014-06-10    |v1.0.2        |Fixed for IE8 &amp; IE9|</p>
+
+<h3 id="author">Author</h3>
+<p><strong>Osman Nuri Okumus</strong></p>
+
+<ul>
+  <li><a href="https://github.com/onokumus">github/onokumus</a></li>
+  <li><a href="https://twitter.com/onokumus">twitter/onokumus</a></li>
+</ul>
+
+<h3 id="license">License</h3>
+<p>Copyright © 2017, <a href="https://github.com/onokumus">Osman Nuri Okumus</a>.
+Released under the <a href="/bower_components/metisMenu/LICENSE">MIT License</a>.</p>
+
+<hr />
+
+<p><em>This file was generated by <a href="https://github.com/verbose/verb-generate-readme">verb-generate-readme</a>, v0.6.0, on October 30, 2017.</em></p>
+
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>

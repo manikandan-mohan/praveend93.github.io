@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <meta content="Road to Convolutional Neural Networks" name="description">
+  
+  
+    <meta name="keywords" content="Machine Learning,Deep Learning">
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|Image Classification
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                    	
+                        	<button class="btn btn-white btn-xs" type="button">Ml</button>
+                        
+                    </div>
+                    <div class="text-center article-title">
+                    <span class="text-muted"><i class="fa fa-clock-o"></i> 15 Jan 2017</span>
+                        <h1>
+                            Image Classification
+                        </h1>
+                    </div>
+                    	<h1 id="audience">Audience</h1>
+
+<p>This tutorial is intended to Machine/deep learning aspirants. CLI coding, Python and an understanding about Classification as a problem is necessary for the reader to comprehend the tutorial.</p>
+
+<p>The Tutorial introduces the reader to the problem of Image classification and explains why simple baseline techniques like K Nearest Neighbor fails for high dimensional classification problems. Tutorial also develops foundational knowledge to understand complex techniques which will be dealt in the coming weeks.</p>
+
+<h1 id="road-to-convolutional-neural-networks">Road to Convolutional Neural Networks</h1>
+
+<h3 id="take---1-classification-explained-using-nearest-neighbor">Take - 1 Classification explained using Nearest Neighbor</h3>
+
+<blockquote>
+  <p>Note : These tutorials are created from Stanford’s course on <a href="http://cs231n.github.io/">Convolutional Neural network</a>. Please read through the material for better understanding. Some text are borrowed from the same as it is better.</p>
+</blockquote>
+
+<p>Task Example:</p>
+
+<p><a href="https://postimg.org/image/3thsk3asd/"><img src="https://s6.postimg.org/v433s0dpd/classify.png" alt="classify.png" /></a></p>
+
+<p>As shown in the image, keep in mind that to a computer an image is represented as one large 3-dimensional array of numbers. In this example, the cat image is 248 pixels wide, 400 pixels tall, and has three color channels Red,Green,Blue (or RGB for short). Therefore, the image consists of <strong>248 X 400 X 3</strong> numbers, or a total of 297,600 numbers. Each number is an integer that ranges from 0 (black) to 255 (white). Our task is to turn this quarter of a million numbers into a single label, such as “cat”. We will be using <a href="http://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a> dataset which consists of 60000 <strong>32X32</strong> images of 10 different classes. 50000 images, 5000 from each class would be in the training set and 10000 images 1000 from each class would be in test set.</p>
+
+<p>As our first approach, we will develop what we call a <strong>Nearest Neighbor Classifier</strong>. This classifier has nothing to do with Convolutional Neural Networks and it is very rarely used in practice, but it will allow us to get an idea about the basic approach to an image classification problem.</p>
+
+<p>How do we compare images?</p>
+
+<p>The nearest neighbor classifier will take a test image, compare it to every single one of the training images, and predict the label of the closest training image. While will effectively compare two <strong>32X32X3</strong> images, pixel by pixel and add up all the differences.In other words, given two images and representing them as vectors <strong>I1</strong>, <strong>I2</strong>, a reasonable choice for comparing them might be the <strong>L1</strong> distance:</p>
+
+<p><a href="https://postimg.org/image/bqgigx7bx/"><img src="https://s6.postimg.org/pk4v5yzxd/l1distance.png" alt="l1distance.png" /></a></p>
+
+<p>If we try to find the distance between <strong>4X4</strong> images, assuming it is from single color code (Red,Blue or green) it looks something like this. First Subtract element wise and then add all differences.</p>
+
+<p><a href="https://postimg.org/image/i1go0828t/"><img src="https://s6.postimg.org/usuu6qc0x/nneg.jpg" alt="nneg.jpg" /></a></p>
+
+<h3 id="downloading-and-pre-processing-the-dataset">Downloading and pre-processing the dataset</h3>
+
+<p>Steps:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ mkdir data 
+~ cd data
+~ wget http://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+~ mkdir cifar10
+~ tar -xvf cifar-10-python.tar.gz -C cifar10
+</code></pre></div></div>
+
+<p>There are <strong>7</strong> files in the cifar10 folder. All are python pickled object files. We have to unpickle them and use it. <strong>5</strong> batch file indicates <strong>5X10000</strong> images or 50000 training images. These are labeled batches. Each batch is a dictionary of Data (key) and label (value)</p>
+
+<ol>
+  <li>
+    <p>Data : <strong>10000X3072</strong> matrix. There are 10000 images. Each row in the matrix is an image. Each image is of size <strong>32X32</strong>. Also remember that they are <em>colored images</em>. We have three color schemes <em>R G B</em>. So <strong>32X32X3</strong>. Therefore each image is a vector of size <strong>3072</strong>. The first <strong>1024</strong> entries contain the red channel values, the next <strong>1024</strong> the green, and the final <strong>1024</strong> the blue. The image is stored in row-major order, so that the first <strong>32</strong> entries of the array are the red channel values of the first row of the image.</p>
+  </li>
+  <li>
+    <p>Lables : A list of 10000 numbers with a range of 0-9.</p>
+  </li>
+</ol>
+
+<p>Lets convert these objects into numbers!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">DATA_HOME_DIR</span> <span class="o">=</span> <span class="n">current_dir</span><span class="o">+</span><span class="s">'/data/cifar10'</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">ls</span> <span class="err">$</span><span class="n">DATA_HOME_DIR</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>batches.meta  data_batch_2  data_batch_4  readme.html
+data_batch_1  data_batch_3  data_batch_5  test_batch
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># writing a routine to unpickle dictionary object.</span>
+<span class="kn">import</span> <span class="nn">cPickle</span>
+<span class="k">def</span> <span class="nf">unpickle</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
+    <span class="n">fo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span>
+    <span class="nb">dict</span> <span class="o">=</span> <span class="n">cPickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fo</span><span class="p">)</span>
+    <span class="n">fo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">dict</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_1_dict</span> <span class="o">=</span> <span class="n">unpickle</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/data_batch_1"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_1_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['data', 'labels', 'batch_label', 'filenames']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_1_dict</span><span class="p">[</span><span class="s">'filenames'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['leptodactylus_pentadactylus_s_000004.png',
+ 'camion_s_000148.png',
+ 'tipper_truck_s_001250.png',
+ 'american_elk_s_001521.png',
+ 'station_wagon_s_000293.png']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_1_dict</span><span class="p">[</span><span class="s">'data'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(10000, 3072)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">batch_1_dict</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">batch_1_dict</span><span class="p">[</span><span class="s">'labels'</span><span class="p">]),</span> <span class="n">batch_1_dict</span><span class="p">[</span><span class="s">'labels'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(dict, 10000, [6, 9, 9, 4, 1])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_1_dict</span><span class="p">[</span><span class="s">'batch_label'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'training batch 1 of 5'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># likewise getting all training batches</span>
+<span class="n">batch_2_dict</span> <span class="o">=</span> <span class="n">unpickle</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/data_batch_2"</span><span class="p">)</span>
+<span class="n">batch_3_dict</span> <span class="o">=</span> <span class="n">unpickle</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/data_batch_3"</span><span class="p">)</span>
+<span class="n">batch_4_dict</span> <span class="o">=</span> <span class="n">unpickle</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/data_batch_4"</span><span class="p">)</span>
+<span class="n">batch_5_dict</span> <span class="o">=</span> <span class="n">unpickle</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/data_batch_5"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># building training set matrix. 50000X3072</span>
+
+<span class="n">Y_tr</span> <span class="o">=</span> <span class="p">[</span><span class="n">batch_1_dict</span><span class="p">[</span><span class="s">'labels'</span><span class="p">],</span><span class="n">batch_2_dict</span><span class="p">[</span><span class="s">'labels'</span><span class="p">],</span><span class="n">batch_3_dict</span><span class="p">[</span><span class="s">'labels'</span><span class="p">],</span><span class="n">batch_4_dict</span><span class="p">[</span><span class="s">'labels'</span><span class="p">],</span><span class="n">batch_5_dict</span><span class="p">[</span><span class="s">'labels'</span><span class="p">]]</span>
+<span class="c"># converting list of lists to list</span>
+<span class="n">Y_tr</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">Y_tr</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">Y_tr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>50000
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">X_tr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">batch_1_dict</span><span class="p">[</span><span class="s">'data'</span><span class="p">],</span><span class="n">batch_2_dict</span><span class="p">[</span><span class="s">'data'</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_tr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X_tr</span><span class="p">,</span><span class="n">batch_3_dict</span><span class="p">[</span><span class="s">'data'</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_tr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X_tr</span><span class="p">,</span><span class="n">batch_4_dict</span><span class="p">[</span><span class="s">'data'</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_tr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X_tr</span><span class="p">,</span><span class="n">batch_5_dict</span><span class="p">[</span><span class="s">'data'</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_tr</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(50000, 3072)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># getting test data</span>
+<span class="n">batch_test</span> <span class="o">=</span>  <span class="n">unpickle</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/test_batch"</span><span class="p">)</span>
+<span class="n">batch_test</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['data', 'labels', 'batch_label', 'filenames']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">batch_test</span><span class="p">[</span><span class="s">'labels'</span><span class="p">]),</span><span class="n">batch_test</span><span class="p">[</span><span class="s">'labels'</span><span class="p">][:</span><span class="mi">5</span><span class="p">],</span><span class="n">batch_test</span><span class="p">[</span><span class="s">'data'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">batch_test</span><span class="p">[</span><span class="s">'batch_label'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(10000, [3, 8, 8, 0, 6], (10000, 3072), 'testing batch 1 of 1')
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_te</span> <span class="o">=</span>  <span class="n">batch_test</span><span class="p">[</span><span class="s">'data'</span><span class="p">]</span>
+<span class="n">Y_te</span> <span class="o">=</span> <span class="n">batch_test</span><span class="p">[</span><span class="s">'labels'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># lets unpickle batches.meta</span>
+<span class="n">meta_file</span> <span class="o">=</span> <span class="n">unpickle</span><span class="p">(</span><span class="n">DATA_HOME_DIR</span><span class="o">+</span><span class="s">"/batches.meta"</span><span class="p">)</span>
+<span class="n">meta_file</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['num_cases_per_batch', 'label_names', 'num_vis']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">meta_file</span><span class="p">[</span><span class="s">'num_cases_per_batch'</span><span class="p">],</span><span class="n">meta_file</span><span class="p">[</span><span class="s">'label_names'</span><span class="p">],</span><span class="n">meta_file</span><span class="p">[</span><span class="s">'num_vis'</span><span class="p">]</span>
+<span class="c"># label_names denotes the classes. 0 = airplane, 1 = automobile. etc. till 9</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(10000,
+ ['airplane',
+  'automobile',
+  'bird',
+  'cat',
+  'deer',
+  'dog',
+  'frog',
+  'horse',
+  'ship',
+  'truck'],
+ 3072)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Summarizing</span>
+<span class="n">X_tr</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">Y_tr</span><span class="p">),</span><span class="n">X_te</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">Y_te</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((50000, 3072), 50000, (10000, 3072), 10000)
+</code></pre></div></div>
+
+<p>Now Data is ready. Lets understand How nearest neighbor works.Our tutorial will cover following aspects.</p>
+
+<ul>
+  <li>The Nearest Neighbor approach</li>
+  <li>K- Nearest Neighbor approach</li>
+  <li>Generalisation, Instance based algorithms</li>
+  <li>Basic problems</li>
+  <li>Solutions : Validation, Cross-Validation</li>
+  <li>summary</li>
+</ul>
+
+<h3 id="the-nearest-neighbor-approach">The Nearest Neighbor Approach</h3>
+
+<p>As I have discussed earlier, Nearest neighbor approach decides the label of an instance (in our case a Picture) and decides whether It belongs to a specific class based on the shortest distance between itself and an image from that class. Our metric for evaluation is accuracy. Any learning algorithm (supervised) will have two phases A train phase. A model is developed from the training examples and its corresponding labels. After training task, We can predict the effectiveness of the model using a small set of hold out labels. This is called a validation set and effectiveness of the model can be interpreted as the functions and that a model can represent. We then predict labels of the test set which does not have labels usually. We can finally decide that a model is so and so percent accurate based on the accuracy metric. This is a standard API of any Machine learning task. Lets start with a very simple Nearest neighbor model which does not have a validation set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nearesr neighbor algorithm with L1 distance.</span>
+
+<span class="k">class</span> <span class="nc">NearestNeighbor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">Y_tr</span><span class="p">):</span>
+        <span class="s">"""
+           X_tr : A matrix of N images of D pixels each. N X D
+           Y_tr : An array or list of N labels.
+        """</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">X_tr</span> <span class="o">=</span> <span class="n">X_tr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Y_tr</span> <span class="o">=</span> <span class="n">Y_tr</span>
+    
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X_te</span><span class="p">):</span>
+        <span class="s">"""
+          X_te :  A matrix of N images of D pixels each. NXD.
+          returns a list or numpy array of predicted labels of length N.
+        """</span>
+        
+        <span class="n">predicted_labels</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X_te</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Y_tr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">each_image_index</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">X_te</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">distance_from_each_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_tr</span><span class="o">-</span><span class="n">X_te</span><span class="p">[</span><span class="n">each_image_index</span><span class="p">]))</span>
+            <span class="n">minimum_distance_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distance_from_each_image</span><span class="p">)</span>
+            <span class="n">predicted_labels</span><span class="p">[</span><span class="n">each_image_index</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y_tr</span><span class="p">[</span><span class="n">minimum_distance_index</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="n">predicted_labels</span>
+            
+            
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Y_tr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_tr</span><span class="p">)</span>
+<span class="n">Y_te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_te</span><span class="p">)</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">NearestNeighbor</span><span class="p">()</span> <span class="c"># create a Nearest Neighbor classifier class</span>
+<span class="n">nn</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Y_tr</span><span class="p">))</span> <span class="c"># train the classifier on the training images and labels</span>
+<span class="n">Y_te_pred</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_te</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c"># predict labels on the test images</span>
+<span class="c"># and now print the classification accuracy, which is the average number</span>
+<span class="c"># of examples that are correctly predicted (i.e. label matches)</span>
+<span class="k">print</span> <span class="s">'accuracy: </span><span class="si">%</span><span class="s">f'</span> <span class="o">%</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_te_pred</span> <span class="o">==</span> <span class="n">Y_te</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>accuracy: 0.112000
+</code></pre></div></div>
+
+<p>What did we just witness?</p>
+
+<p>A very slow model to test and a very fast model to train. Each image in the test set has to compare with all the 50000 images. There are 10000 training images. So a total of more than 500000 calculation steps at a time. At this point I want to emphasize why we chose to use nearest neighbor algorithm for a classification problem? It is because it sets up a baseline. We have several augumentation in place for this simple algorithm. But it will not exceed the near human classification performance or near state of art Deep learning model which is around 95%.</p>
+
+<p>Some augumentations we can try are:</p>
+
+<ul>
+  <li>Using $L_2$ distance or Euclidean distance instead of $L_1$ distance.</li>
+  <li>We have only considered nearest neighbor. We can consider K nearest neighbor before deciding on the label. Find the minimum distance between K nearest neighbors and take a vote between these neighbors to decide on the label of the instance.</li>
+</ul>
+
+<p>But, There are many more such parameters that can improve this model. Infact, We can use different considerations like different types of distances and different number of neighbors to tune the model better and bring in better accuracy. These choices are called <strong>hyperparameters</strong> and they come up very often in the design of many Machine Learning algorithms that learn from data. It’s often not obvious what values/settings one should choose.</p>
+
+<h2 id="hyperparameter-tuning">Hyperparameter Tuning</h2>
+
+<p>We cannot use the test set for the purpose of tweaking hyperparameters. Whenever you’re designing Machine Learning algorithms, you should think of the test set as a very precious resource that should ideally never be touched until one time at the very end. Otherwise, the very real danger is that you may tune your hyperparameters to work well on the test set, but if you were to deploy your model you could see a significantly reduced performance. In practice, we would say that you overfit to the test set. Another way of looking at it is that if you tune your hyperparameters on the test set, you are effectively using the test set as the training set, and therefore the performance you achieve on it will be too optimistic with respect to what you might actually observe when you deploy your model. But if you only use the test set once at end, it remains a good proxy for measuring the generalization of your classifier (we will see much more discussion surrounding generalization later in the class).</p>
+
+<p>So how to tune hyperparameters? The idea is to split our training set in two: a slightly smaller training set, and what we call a validation set. Using CIFAR-10 as an example, we could for example use 49,000 of the training images for training, and leave 1,000 aside for validation. This validation set is essentially used as a fake test set to tune the hyper-parameters.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_val</span> <span class="o">=</span> <span class="n">X_tr</span><span class="p">[:</span><span class="mi">1000</span><span class="p">,:]</span>
+<span class="n">Y_val</span> <span class="o">=</span> <span class="n">Y_tr</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+<span class="n">X_tr</span> <span class="o">=</span> <span class="n">X_tr</span><span class="p">[</span><span class="mi">1000</span><span class="p">:,:]</span>
+<span class="n">Y_tr</span> <span class="o">=</span>  <span class="n">Y_tr</span><span class="p">[</span><span class="mi">1000</span><span class="p">:]</span>
+</code></pre></div></div>
+
+<p>We have code to find only the nearest neighbor. So writing the code to augument. K nearest neighbor.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">KNearestNeighbor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">Y_tr</span><span class="p">):</span>
+        <span class="s">"""
+           X_tr : A matrix of N images of D pixels each. N X D
+           Y_tr : An array or list of N labels.
+        """</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">X_tr</span> <span class="o">=</span> <span class="n">X_tr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Y_tr</span> <span class="o">=</span> <span class="n">Y_tr</span>
+    
+    
+    
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X_te</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+        <span class="s">"""
+          X_te :  A matrix of N images of D pixels each. NXD.
+          returns a list or numpy array of predicted labels of length N.
+        """</span>
+        
+        <span class="n">predicted_labels</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X_te</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Y_tr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">each_image_index</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">X_te</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="c"># using L2 distance this time.</span>
+            <span class="n">distance_from_each_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_tr</span> <span class="o">-</span> <span class="n">X_te</span><span class="p">[</span><span class="n">each_image_index</span><span class="p">,:]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span> 
+            <span class="c"># 49000 X 1</span>
+            <span class="c"># a very useful function to know. </span>
+            <span class="c"># http://stackoverflow.com/questions/34226400/find-the-k-smallest-values-of-a-numpy-array</span>
+            <span class="n">k_minimum_distance_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argpartition</span><span class="p">(</span><span class="n">distance_from_each_image</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> 
+            <span class="n">index_of_labels_to_vote</span> <span class="o">=</span>  <span class="n">k_minimum_distance_index</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">k_predicted_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y_tr</span><span class="p">[</span><span class="n">index_of_labels_to_vote</span><span class="p">]</span>
+            <span class="c"># another useful function to know.</span>
+            <span class="c"># http://stackoverflow.com/questions/6252280/find-the-most-frequent-number-in-a-numpy-vector</span>
+            <span class="n">counts_of_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">k_predicted_labels</span><span class="p">)</span>
+            <span class="n">best_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts_of_labels</span><span class="p">)</span>
+            <span class="n">predicted_labels</span><span class="p">[</span><span class="n">each_image_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">best_label</span>
+        
+        <span class="k">return</span> <span class="n">predicted_labels</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">validation_accuracies</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">X_val</span> <span class="o">=</span> <span class="n">X_val</span><span class="p">[:</span><span class="mi">400</span><span class="p">]</span>
+<span class="n">Y_val</span> <span class="o">=</span> <span class="n">Y_val</span><span class="p">[:</span><span class="mi">400</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">]:</span>
+    <span class="n">knn</span> <span class="o">=</span> <span class="n">KNearestNeighbor</span><span class="p">()</span>
+    <span class="n">knn</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span><span class="n">Y_tr</span><span class="p">)</span>
+    <span class="n">Y_predic_val</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_predic_val</span> <span class="o">==</span> <span class="n">Y_val</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">'K-value: {0} accuracy :{1}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">acc</span><span class="p">)</span>
+    <span class="n">validation_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">acc</span><span class="p">))</span>
+
+<span class="k">print</span> <span class="n">validation_accuracies</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>K-value: 1 accuracy :0.26
+K-value: 3 accuracy :0.2125
+K-value: 5 accuracy :0.2275
+K-value: 10 accuracy :0.22
+K-value: 20 accuracy :0.2225
+K-value: 50 accuracy :0.21
+K-value: 100 accuracy :0.2225
+[(1, 0.26000000000000001), (3, 0.21249999999999999), (5, 0.22750000000000001), (10, 0.22), (20, 0.2225), (50, 0.20999999999999999), (100, 0.2225)]
+</code></pre></div></div>
+
+<p>You can see that, i ran only for $400$ validation samples out of $1000$. This is again because of the computational performance of the algorithm. You are most-welcome to run for all the 1000 validation samples.By the end of this procedure, we could get an intution on which values of k work best. We would then stick with this value and evaluate once on the actual test set.</p>
+
+<p>If you want to fine-tune better, we can use another technique called <strong>Cross-validation</strong> in typical scenarios where the size of your training data (and therefore also the validation data) might be small.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># lets try a five fold cross validation</span>
+<span class="c"># train set contains 1000 elements</span>
+<span class="c"># test set contains 200 elements.</span>
+<span class="c"># all taken from train set</span>
+<span class="n">X_cv_tr</span> <span class="o">=</span> <span class="n">X_tr</span><span class="p">[:</span><span class="mi">1000</span><span class="p">,:]</span>
+<span class="n">Y_cv_tr</span> <span class="o">=</span>  <span class="n">Y_tr</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+<span class="n">X_cv_te</span> <span class="o">=</span>  <span class="n">X_tr</span><span class="p">[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1200</span><span class="p">,:]</span>
+<span class="n">Y_cv_te</span> <span class="o">=</span> <span class="n">Y_tr</span><span class="p">[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1200</span><span class="p">]</span>
+<span class="n">X_cv_tr</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">Y_cv_tr</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">X_cv_te</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">Y_cv_te</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((1000, 3072), (1000,), (200, 3072), (200,))
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># do not use test set for hyper parameter tuning.</span>
+
+<span class="n">val_set_start</span> <span class="o">=</span><span class="mi">0</span>
+<span class="n">val_set_end</span> <span class="o">=</span><span class="mi">200</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">cv_accuracy_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="n">val_set_start</span><span class="o">&lt;</span><span class="n">val_set_end</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">val_set_end</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_cv_tr</span><span class="p">)):</span>
+    <span class="k">print</span> <span class="s">"iteration {0}, between {1} and {2} in train set are set to validation"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span><span class="n">val_set_start</span><span class="p">,</span><span class="n">val_set_end</span><span class="p">)</span>
+    <span class="c"># validation set</span>
+    <span class="n">X_cv_valid</span> <span class="o">=</span> <span class="n">X_cv_tr</span><span class="p">[</span><span class="n">val_set_start</span><span class="p">:</span><span class="n">val_set_end</span><span class="p">]</span>
+    <span class="n">Y_cv_valid</span> <span class="o">=</span> <span class="n">Y_cv_tr</span><span class="p">[</span><span class="n">val_set_start</span><span class="p">:</span><span class="n">val_set_end</span><span class="p">]</span>
+    
+    <span class="c"># train set</span>
+    <span class="n">X_train_cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X_cv_tr</span><span class="p">[:</span><span class="n">val_set_start</span><span class="p">],</span><span class="n">X_cv_tr</span><span class="p">[</span><span class="n">val_set_end</span><span class="p">:]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">Y_train_cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Y_cv_tr</span><span class="p">[:</span><span class="n">val_set_start</span><span class="p">],</span><span class="n">Y_cv_tr</span><span class="p">[</span><span class="n">val_set_end</span><span class="p">:]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c"># validation accuracy for this set</span>
+    <span class="n">validation_accuracy</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">]:</span>
+        
+        <span class="n">knn</span> <span class="o">=</span> <span class="n">KNearestNeighbor</span><span class="p">()</span>
+        <span class="n">knn</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">X_train_cv</span><span class="p">,</span><span class="n">Y_train_cv</span><span class="p">)</span>
+        
+        <span class="n">Y_predic_val</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_cv_valid</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span>
+        <span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_predic_val</span> <span class="o">==</span> <span class="n">Y_cv_valid</span><span class="p">)</span>
+        
+        <span class="k">print</span> <span class="s">'validation set {0} K-value: {1} accuracy :{2}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">acc</span><span class="p">)</span>
+        <span class="n">validation_accuracy</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">acc</span><span class="p">))</span>
+    <span class="n">cv_accuracy_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">validation_accuracy</span><span class="p">)</span>
+    <span class="k">print</span>
+    
+    <span class="n">val_set_start</span> <span class="o">+=</span><span class="mi">200</span>
+    <span class="n">val_set_end</span> <span class="o">+=</span><span class="mi">200</span>
+    <span class="n">counter</span> <span class="o">+=</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iteration 1, between 0 and 200 in train set are set to validation
+validation set 1 K-value: 1 accuracy :0.185
+validation set 1 K-value: 3 accuracy :0.16
+validation set 1 K-value: 5 accuracy :0.145
+validation set 1 K-value: 10 accuracy :0.135
+validation set 1 K-value: 20 accuracy :0.195
+validation set 1 K-value: 50 accuracy :0.215
+validation set 1 K-value: 100 accuracy :0.205
+
+iteration 2, between 200 and 400 in train set are set to validation
+validation set 2 K-value: 1 accuracy :0.195
+validation set 2 K-value: 3 accuracy :0.155
+validation set 2 K-value: 5 accuracy :0.18
+validation set 2 K-value: 10 accuracy :0.215
+validation set 2 K-value: 20 accuracy :0.195
+validation set 2 K-value: 50 accuracy :0.21
+validation set 2 K-value: 100 accuracy :0.215
+
+iteration 3, between 400 and 600 in train set are set to validation
+validation set 3 K-value: 1 accuracy :0.185
+validation set 3 K-value: 3 accuracy :0.12
+validation set 3 K-value: 5 accuracy :0.155
+validation set 3 K-value: 10 accuracy :0.145
+validation set 3 K-value: 20 accuracy :0.225
+validation set 3 K-value: 50 accuracy :0.245
+validation set 3 K-value: 100 accuracy :0.21
+
+iteration 4, between 600 and 800 in train set are set to validation
+validation set 4 K-value: 1 accuracy :0.18
+validation set 4 K-value: 3 accuracy :0.18
+validation set 4 K-value: 5 accuracy :0.15
+validation set 4 K-value: 10 accuracy :0.18
+validation set 4 K-value: 20 accuracy :0.185
+validation set 4 K-value: 50 accuracy :0.17
+validation set 4 K-value: 100 accuracy :0.18
+
+iteration 5, between 800 and 1000 in train set are set to validation
+validation set 5 K-value: 1 accuracy :0.155
+validation set 5 K-value: 3 accuracy :0.175
+validation set 5 K-value: 5 accuracy :0.185
+validation set 5 K-value: 10 accuracy :0.165
+validation set 5 K-value: 20 accuracy :0.165
+validation set 5 K-value: 50 accuracy :0.16
+validation set 5 K-value: 100 accuracy :0.155
+</code></pre></div></div>
+
+<p>What actually happend above is called a n-fold cross validation. where n here is 5.</p>
+
+<ul>
+  <li>We have 1000 training data points.</li>
+  <li>Divide them into 5 equal chunks which is 200 points</li>
+  <li>use each of the chuck as validation set and tune hyper parameters.</li>
+  <li>So for each fold in cross validation, we have calculated the accuracy for different values of K</li>
+</ul>
+
+<h3 id="how-to-identify-which-is-the-best-k-in-n-fold-cross-validation">How to identify which is the best K in n-fold cross validation.</h3>
+
+<p>We have an array called cv accuracy list. Mean accuracy for a specify K over all folds gives the ultimate accuracy of K. We can then use the best K based on the accuracy and use it in test set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">accuracy_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">acc</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cv_accuracy_list</span><span class="p">:</span>
+    
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">accuracy_dict</span><span class="p">:</span>
+        <span class="n">accuracy_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">accuracy_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">acc</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">accuracy_dict</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+    <span class="n">accuracy_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">accuracy_dict</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{1: 0.18, 3: 0.158, 100: 0.193, 5: 0.163, 10: 0.168, 50: 0.2, 20: 0.193}
+</code></pre></div></div>
+
+<p>You can see for 50 there is maximum accuracy of <strong>0.2</strong>. Use it to predict the the test labels.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predict_test_Knn</span> <span class="o">=</span> <span class="n">KNearestNeighbor</span><span class="p">()</span>
+<span class="n">predict_test_Knn</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">X_cv_tr</span><span class="p">,</span><span class="n">Y_cv_tr</span><span class="p">)</span>
+<span class="n">Y_te_pred</span> <span class="o">=</span> <span class="n">predict_test_Knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_cv_te</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'accuracy: </span><span class="si">%</span><span class="s">f'</span> <span class="o">%</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y_te_pred</span> <span class="o">==</span> <span class="n">Y_cv_te</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>accuracy: 0.210000
+</code></pre></div></div>
+
+<p>In practice, people prefer to avoid cross-validation in favor of having a single validation split, since cross-validation can be computationally expensive. The splits people tend to use is between 50%-90% of the training data for training and rest for validation. We used 80-20 rule.</p>
+
+<p>However, this depends on multiple factors:</p>
+<ul>
+  <li>If the number of hyperparameters is large you may prefer to use bigger validation splits.</li>
+  <li>If the number of examples in the validation set is small (perhaps only a few hundred or so), it is safer to use cross-validation.</li>
+  <li>Typical number of folds you can see in practice would be 3-fold, 5-fold or 10-fold cross-validation.</li>
+</ul>
+
+<h3 id="pros-and-cons-of-nearest-neighbor">Pros and Cons of Nearest Neighbor</h3>
+
+<p><strong>Pros</strong></p>
+
+<ul>
+  <li>It is very simple to implement and understand</li>
+  <li>Takes no time to train, since all that is required is to store and possibly index the training data</li>
+</ul>
+
+<p><strong>Cons</strong></p>
+
+<ul>
+  <li>
+    <p>Fails over high dimensions. High dimensional distance identification is always a problem. Look into an example given in the resource I have mentioned above to understand how particulary image classification, which is a very good example of High dimensional classification is poorly done by kNN. Also we got an accuracy of around 20 percent which itself proves that the algo does poorly for high dimensional classification.</p>
+  </li>
+  <li>
+    <p>Computationally hard. Again we witnessed this for simple NN and KNN. There are new advancements in resolving this problem. Algorithms like <a href="http://www.cs.ubc.ca/research/flann/">FLANN</a>, <a href="https://en.wikipedia.org/wiki/K-d_tree">KDtrees</a> are trying to solve this problems.</p>
+  </li>
+  <li>
+    <p>Takes a lot of time to test even though we have no training time. We witnessed the same in our code.</p>
+  </li>
+</ul>
+
+<h2 id="recommeneded-readings">Recommeneded Readings</h2>
+
+<ol>
+  <li>[CS231n] (http://cs231n.github.io/classification/). Particularly the last few parts. I have not briefed much here.</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Clearly, we came to know that a baseline classification method like KNN failed miserably with data in high dimensions. But in this tutorial, we came to know about the Machine learning template. That is</p>
+
+<ul>
+  <li>Try a simple algorithm</li>
+  <li>improvise it. Understand Hyperparameters that affects performance of the algorithm</li>
+  <li>fine tune it. Regular validation approach</li>
+  <li>Cross validation approach</li>
+  <li>infer what we learnt.</li>
+</ul>
+
+<p>Learning is all about introspecting and retrospecting what we have already learnt!</p>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <h5 style="display: inline;">Tags:</h5>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">blog</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">Machine learning</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">Deep Learning</button>
+                                
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small text-right">
+                                <h5>Stats:</h5>
+                                <div> 
+                                
+                                <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="http://karthikBalasubramanian.github.io/ml/2017/01/15/K_Nearest_neighbor_final.html">0</span> comments
+                                
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <br>
+                    <!-- <div class="row">
+                        <div class="col-lg-12">-->
+                            <!-- donate -->
+                            <!-- 
+                            <br> -->
+                            <!-- share -->
+                            <!-- 
+                            <br> -->
+                            <!-- comment -->
+                            
+
+
+<div id="disqus_thread"></div>
+<script>
+/** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+	/*
+	var disqus_config = function () { this.page.url = PAGE_URL;
+	// Replace PAGE_URL with your page's canonical URL variable this.page.identifier = PAGE_IDENTIFIER;
+	// Replace PAGE_IDENTIFIER with your page's unique identifier variable };
+	*/
+	(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//https-karthikbalasubramanian-github-io.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+ 
+                        <!-- </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>

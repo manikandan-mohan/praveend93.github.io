@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+
+	
+	    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <meta name="author" content="Karthik">
+
+  <title>
+    
+        Karthik Balasubramanian|3.5.2
+    
+  </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="//static/img/brain.ico">
+
+  <!-- Third-party CSS -->
+  <link href="/bower_components/normalize-css/normalize.min.css" rel="stylesheet">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+  <!-- <link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"> -->
+  <link href="/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+  <link rel="stylesheet" href="//search/css/cb-search.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.min.css" rel="stylesheet">
+  <link href="/static/css/pygments.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+  <script>
+    $(function(){
+        $("pre").css('display','block');
+    });
+  </script>
+  <!-- Mainly scripts -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/bower_components/peity/jquery.peity.min.js"></script>
+
+  <script src="/bower_components/PACE/pace.min.js"></script>
+  <script src="/bower_components/wow/dist/wow.min.js"></script>
+  <!-- Custom and plugin javascript -->
+  <script src="/static/js/inspinia.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/bower_components/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/bower_components/rickshaw/rickshaw.min.js"></script>
+
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script id="dsq-count-scr" src="//https-karthikbalasubramanian-github-io.disqus.com/count.js" async></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+<!-- GrowingIO -->
+
+
+</head>
+
+	
+
+
+<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool"
+      style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px; opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png" id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Karthik Balasubramanian</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/"></a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/blog/">blog</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/ml/">Data Science</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/algorithms/">algorithms</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/life/">life</a></li>
+                        
+                            
+                            <li>
+                            
+                            <a class="page-scroll" href="/writing/">writing</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <h3 id="352">3.5.2</h3>
+<ul>
+  <li>remove the module entry point again will be added in 4.0.0</li>
+</ul>
+
+<h3 id="351">3.5.1</h3>
+<ul>
+  <li>fix build output add a test file to test the generated build</li>
+</ul>
+
+<h3 id="350">3.5.0</h3>
+<ul>
+  <li>Setting options on individual translations override, rather than merge global configs <a href="https://github.com/i18next/i18next/issues/832">#832</a></li>
+  <li>Create an new translator when cloning i18next instance <a href="https://github.com/i18next/i18next/pull/834">#834</a></li>
+  <li>
+    <p>allows fallbackLng to be an string, an array or an object defining fallbacks for lng, lng-region plus default, eg</p>
+
+    <p>fallbackLng: {
+  ‘de-CH’: [‘fr’, ‘it’, ‘en’],
+  ‘de’: [‘fr’, ‘en’],
+  ‘zh-Hans’: [‘zh-Hant’, ‘en’],
+  ‘zh-Hant’: [‘zh-Hans’, ‘en’],
+  ‘default’: [‘en’]
+}</p>
+  </li>
+</ul>
+
+<h3 id="344">3.4.4</h3>
+<ul>
+  <li>Fix Interpolator.escapeValue defaulting to undefined in some cases <a href="https://github.com/i18next/i18next/issues/826">#826</a></li>
+</ul>
+
+<h3 id="343">3.4.3</h3>
+<ul>
+  <li>Fix Interpolator formatter exception error propagation due to not reset RegExp indices <a href="https://github.com/i18next/i18next/issues/820">#820</a></li>
+</ul>
+
+<h3 id="342">3.4.2</h3>
+<ul>
+  <li>assert dir function does not crash if no language available</li>
+</ul>
+
+<h3 id="341">3.4.1</h3>
+<ul>
+  <li>fix issue with format containing formatSeparator for interpolation formatting</li>
+</ul>
+
+<h3 id="340">3.4.0</h3>
+<ul>
+  <li>adds formatting ‘format this: ‘ having a function on options.interpolation.format: function(value, format, lng) { return value } like suggested here <a href="https://github.com/i18next/i18next/issues/774">#774</a></li>
+</ul>
+
+<h3 id="331">3.3.1</h3>
+<ul>
+  <li>fixed an issue with several unescaped key in the interpolation string <a href="https://github.com/i18next/i18next/pull/746">#746</a></li>
+</ul>
+
+<h3 id="330">3.3.0</h3>
+<ul>
+  <li>allows option <code class="highlighter-rouge">nonExplicitWhitelist</code> on init <a href="https://github.com/i18next/i18next/pull/741">#741</a></li>
+</ul>
+
+<h3 id="320">3.2.0</h3>
+<ul>
+  <li>adds api function i18next.reloadResources(), i18next.reloadResources(lngs, ns) to trigger a reload of translations</li>
+</ul>
+
+<h3 id="310">3.1.0</h3>
+<ul>
+  <li>emits missingKey always (like console.log) even if saveMissing is of -&gt; use missingKeyHandler if you only want the trigger only on saveMissing: true</li>
+</ul>
+
+<h3 id="300">3.0.0</h3>
+<ul>
+  <li><strong>[BREAKING]</strong> per default i18next uses now the same index as used in gettext for plurals. eg. for arabic suffixes are 0,1,2,3,4,5 instead of 0,1,2,3,11,100. You can enforce old behaviour by setting compatibilityJSON = ‘v2’ on i18next init.</li>
+  <li><strong>[BREAKING]</strong> AMD export will be unnamed now</li>
+  <li>don’t call saveMissing if no lng</li>
+</ul>
+
+<h3 id="251">2.5.1</h3>
+<ul>
+  <li>fixes rtl support <a href="https://github.com/i18next/i18next/pull/656/files">#656</a></li>
+</ul>
+
+<h3 id="250">2.5.0</h3>
+<ul>
+  <li>allow null or empty string as defaultValue</li>
+  <li>init option <code class="highlighter-rouge">initImmediate (default: true)</code> to init without immediate</li>
+</ul>
+
+<h3 id="241">2.4.1</h3>
+<ul>
+  <li>if passing resources don’t immediate loading fixes <a href="https://github.com/i18next/i18next/issues/636">#636</a></li>
+</ul>
+
+<h3 id="240">2.4.0</h3>
+<ul>
+  <li>support now language code variants with scripts and other exotic forms: zh-Hans-MO, sgn-BE-fr, de-AT-1996,…</li>
+  <li>trigger of changeLanguage, load of data with a setTimeout to allow other operations meanwhile</li>
+</ul>
+
+<h3 id="235">2.3.5</h3>
+<ul>
+  <li>Only add language to preload array when new <a href="https://github.com/i18next/i18next/pull/613/files">#613</a></li>
+</ul>
+
+<h3 id="234">2.3.4</h3>
+<ul>
+  <li>get babel 6 output IE compatible: https://jsfiddle.net/jamuhl/2qc7oLf8/</li>
+</ul>
+
+<h3 id="232">2.3.2</h3>
+<ul>
+  <li>add index to make export compatible again</li>
+</ul>
+
+<h3 id="231">2.3.1</h3>
+<ul>
+  <li>build /dist/es with included babelhelpers</li>
+</ul>
+
+<h3 id="230">2.3.0</h3>
+<ul>
+  <li>change build chain to use rollup…allows ‘js:next’ and reduces build from 45kb to 33kb minified (/lib –&gt; /dist/commonjs folder, new /dist/es for rollup,…)</li>
+  <li>fixes detection when using both context and pluralization and context not found. <a href="https://github.com/i18next/i18next/pull/581">#851</a></li>
+</ul>
+
+<h3 id="220">2.2.0</h3>
+<ul>
+  <li>return instance after init for further chaning</li>
+  <li>make init optional on backend, cache</li>
+  <li>package.json entry points now to /lib not to mangled version…this might be the better solution for most use cases (build chains built on npm, webpack, browserify, node,…)</li>
+</ul>
+
+<h3 id="210">2.1.0</h3>
+<ul>
+  <li>allow keySeparator, nsSeparator = false to turn that off</li>
+</ul>
+
+<h3 id="2026">2.0.26</h3>
+<ul>
+  <li>extended emitted arguments on ‘added’ event</li>
+</ul>
+
+<h3 id="2024">2.0.24</h3>
+<ul>
+  <li>fixes unneeded reload of resources that failed to load</li>
+</ul>
+
+<h3 id="2023">2.0.23</h3>
+<ul>
+  <li>fixes returnObjects in case of multiple namespaces</li>
+</ul>
+
+<h3 id="2022">2.0.22</h3>
+<ul>
+  <li>add options for context, pluralSeparator</li>
+</ul>
+
+<h3 id="2021">2.0.21</h3>
+<ul>
+  <li>clear done load request in backendConnector</li>
+</ul>
+
+<h3 id="2020">2.0.20</h3>
+<ul>
+  <li>pass full options to detectors as third arg</li>
+</ul>
+
+<h3 id="2019">2.0.19</h3>
+<ul>
+  <li>do not callback err in backendConnector if no backend is specified</li>
+</ul>
+
+<h3 id="2018">2.0.18</h3>
+<ul>
+  <li>check for fallbackLng exist</li>
+</ul>
+
+<h3 id="2017">2.0.17</h3>
+<ul>
+  <li>adds cimode to options.whitelist if set</li>
+  <li>emits failedLoading on load error</li>
+</ul>
+
+<h3 id="2016">2.0.16</h3>
+<ul>
+  <li>adds addResource to i18next API</li>
+  <li>fix init of i18next without options, callback</li>
+</ul>
+
+<h3 id="2015">2.0.15</h3>
+<ul>
+  <li>avoid loading of resources for lng=cimode</li>
+</ul>
+
+<h3 id="2014">2.0.14</h3>
+<ul>
+  <li>enhance callback on load from backend…wait for pendings</li>
+</ul>
+
+<h3 id="2010">2.0.10</h3>
+<ul>
+  <li>fixing build chain</li>
+  <li>do not post process on nested translation resolve</li>
+</ul>
+
+<h3 id="205">2.0.5</h3>
+<ul>
+  <li>fixing allow nesting on interpolated nesting vars</li>
+</ul>
+
+<h3 id="204">2.0.4</h3>
+<ul>
+  <li>don’t log lng changed if no lng was detected</li>
+  <li>extend result on arrayJoins</li>
+</ul>
+
+<h3 id="201">2.0.1</h3>
+<ul>
+  <li>assert defaults are arrays where needed</li>
+  <li>assert calling lngUtils.toResolveHierarchy does not add undefined as code if called without code param</li>
+</ul>
+
+<h3 id="200">2.0.0</h3>
+<ul>
+  <li>complete rewrite of i18next codebase</li>
+</ul>
+
+<hr />
+
+<h3 id="1112">1.11.2</h3>
+<ul>
+  <li>replace forEach loop to support IE8 <a href="https://github.com/i18next/i18next/pull/461">PR 461</a></li>
+</ul>
+
+<h3 id="1111">1.11.1</h3>
+<ul>
+  <li>fixes issue in nesting using multiple namespaces and lookups in fallback namespaces</li>
+  <li>Fix use of sprintf as shortcutFunction when first argument falsey <a href="https://github.com/i18next/i18next/pull/453">PR 453</a></li>
+</ul>
+
+<h3 id="1110">1.11.0</h3>
+<ul>
+  <li>Add nsseparator and keyseparator as options to translation function <a href="https://github.com/i18next/i18next/pull/446">PR 446</a></li>
+  <li>Resolves issue #448 - TypeScript errors <a href="https://github.com/i18next/i18next/pull/449">PR 449</a></li>
+  <li>Fixing _deepExtend to handle keys deep existing in source and target <a href="https://github.com/i18next/i18next/pull/444">PR 444</a></li>
+  <li><code class="highlighter-rouge">resource</code> to <code class="highlighter-rouge">resources</code> in addResources function <a href="https://github.com/i18next/i18next/pull/440">PR 440</a></li>
+  <li>Runs multiple post processes for missing translations <a href="https://github.com/i18next/i18next/pull/438">PR 438</a></li>
+  <li>Add support to override Ajax HTTP headers <a href="https://github.com/i18next/i18next/pull/431">PR 431</a></li>
+  <li>Fixed mnk plural definition <a href="https://github.com/i18next/i18next/pull/427">PR 427</a></li>
+  <li>Add dir function to return directionality of current language, closes… <a href="https://github.com/i18next/i18next/pull/413">PR 413</a></li>
+</ul>
+
+<h3 id="1103">1.10.3</h3>
+<ul>
+  <li>fixes issue where lng get fixed on data-i18n-options</li>
+  <li>[SECURITY] merges Reimplement XSS-vulnerable sequential replacement code <a href="https://github.com/i18next/i18next/pull/443">PR 443</a></li>
+</ul>
+
+<h3 id="1102">1.10.2</h3>
+<ul>
+  <li>streamline callback(err, t) for case where resStore is passed in</li>
+</ul>
+
+<h3 id="1101">1.10.1</h3>
+<ul>
+  <li>fixes Adds jquery like functionality without the jquery plugin. <a href="https://github.com/i18next/i18next/pull/403">PR 403</a> by adding it to output</li>
+</ul>
+
+<h3 id="1100">1.10.0</h3>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[BREAKING] new callbacks will be node.js conform function(err, t)</td>
+          <td>Forward the error from sync fetch methods to the init callback function <a href="https://github.com/i18next/i18next/pull/402">PR 402</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>fix fallback lng option during translations <a href="https://github.com/i18next/i18next/pull/399">PR 399</a></li>
+  <li>Adds jquery like functionality without the jquery plugin. <a href="https://github.com/i18next/i18next/pull/403">PR 403</a></li>
+</ul>
+
+<h3 id="191">1.9.1</h3>
+<ul>
+  <li>fix fallback lng option during translations <a href="https://github.com/i18next/i18next/pull/399">PR 399</a></li>
+  <li>Adds jquery like functionality without the jquery plugin. <a href="https://github.com/i18next/i18next/pull/403">PR 403</a></li>
+</ul>
+
+<h3 id="190">1.9.0</h3>
+<ul>
+  <li>i18n.noConflict() <a href="https://github.com/i18next/i18next/pull/371">PR 371</a></li>
+  <li>fix fallback to default namepsace when namespace passed as an option <a href="https://github.com/i18next/i18next/pull/375">PR 375</a></li>
+  <li>cache option for ajax requests <a href="https://github.com/i18next/i18next/pull/376">PR 376</a></li>
+  <li>option to show key on value is empty string <a href="https://github.com/i18next/i18next/pull/379">PR 379</a></li>
+  <li>Add isInitialized method <a href="https://github.com/i18next/i18next/pull/380">PR 380</a></li>
+  <li>Null check for detectLngFromLocalStorage <a href="https://github.com/i18next/i18next/pull/384">PR 384</a></li>
+  <li>support for adding timeout in configuration for ajax request <a href="https://github.com/i18next/i18next/pull/387">PR 387</a></li>
+</ul>
+
+<h3 id="182">1.8.2</h3>
+<ul>
+  <li>fixes build of commonjs with jquery file</li>
+</ul>
+
+<h3 id="180">1.8.0</h3>
+<ul>
+  <li>[BREAKING] adds custom build for commonjs with jquery…default will be without require for jquery</li>
+  <li>fixes issue <a href="https://github.com/i18next/i18next/issues/360">issue 360</a></li>
+  <li>expose applyReplacement on api</li>
+  <li>save resources to localStorage when useLocaleStore is true</li>
+  <li>add support on key is a number</li>
+  <li>added getResourceBundle to API</li>
+  <li>allow multiple post-processors</li>
+  <li>fallback to singular if no plural is found fixes issue <a href="https://github.com/i18next/i18next/issues/356">issue 356</a></li>
+  <li>access localstorage always with try catch fixes issue <a href="https://github.com/i18next/i18next/issues/353">issue 353</a></li>
+</ul>
+
+<h3 id="177">1.7.7</h3>
+<ul>
+  <li>fixes issue with stack overflow on t(lng, count)</li>
+  <li>fixes empty value fallback when processing secondary ns</li>
+</ul>
+
+<h3 id="176">1.7.6</h3>
+<ul>
+  <li>fixes lng detection (i18next-client on npm)</li>
+</ul>
+
+<h3 id="175">1.7.5</h3>
+<ul>
+  <li>adds option to define defaultOptions, which gets merged into t(options) <a href="https://github.com/i18next/i18next/issues/307">issue 307</a></li>
+  <li>optimization of size added by plural rules</li>
+  <li>handle error on json parse when using internal xhr</li>
+  <li>fixes plural/singular on count if going on fallbacks eg. fr –&gt; en</li>
+  <li>fixes global leak of sync in amd versions</li>
+  <li>apply options.lowerCaseLng to fallbackLng too</li>
+  <li>added hasResourceBundle(lng, ns) to check if bundle exists</li>
+  <li>added experimental i18n.sync.reload –&gt; resets resStore and reloads resources</li>
+  <li>catch issues with localStorage quota</li>
+  <li>changes detectlanguage to support whitelist entries</li>
+</ul>
+
+<h3 id="174">1.7.4</h3>
+<ul>
+  <li>add resource bundle gets deep extend flag i18n.addResourceBundle(lng, ns, { ‘deep’: { ‘key2’: ‘value2’ }}, true);</li>
+  <li>new functions to add one key value or multiple i18n.addResource(lng, ns, key, value);, i18n.addResources(lng, ns, {‘key1’: ‘value1’, ‘deep.key2’: ‘value2’});</li>
+  <li>lngWhitelist merged</li>
+  <li>override postMissing function</li>
+  <li>allow floats for count</li>
+  <li>added indefinite functionality for plurals</li>
+  <li>optional set replacing vars to replace member to avoid collision with other options</li>
+  <li>experimental optional detectLngFromLocalStorage</li>
+  <li>fix for norwegian language</li>
+</ul>
+
+<h3 id="173">1.7.3</h3>
+<ul>
+  <li>solves issue with ie8 not providing .trim function on string -&gt; added to shim</li>
+  <li>set data using $(selector).i18n() on data-i18n=’[data-someDataAttr]key’</li>
+  <li>more bullet proof state handling on failed file load</li>
+  <li>corrected latvian plurals based on <a href="https://github.com/jamuhl/i18next/issues/231">issue 231</a></li>
+  <li>allow array of fallback languages</li>
+  <li>allow int in values passed to shortcut sprintf</li>
+  <li>setLng to ‘cimode’ will trigger a CI mode returning ‘key’ instead of translation</li>
+</ul>
+
+<h3 id="172">1.7.2</h3>
+<ul>
+  <li>introducing option fallbackOnEmpty -&gt; empty string will fallback</li>
+  <li>added function removeResourceBundle(lng, ns) -&gt; removes a resource set</li>
+  <li>fixed issue with no option passed to setLng</li>
+  <li>added ability to prepend, append content with data-i18n attributes</li>
+  <li>introducing objectTreeKeyHandler</li>
+  <li>fixes issue with i18n.t(null), i18n.t(undefined) throwing exception</li>
+  <li>returnObjectTrees does not mangle arrays, functions, and regexps</li>
+  <li>optimized structure for bower support</li>
+</ul>
+
+<h3 id="171">1.7.1</h3>
+<ul>
+  <li>fixed some typo</li>
+  <li>allow translate to take an array of keys - take first found</li>
+  <li>allow numbers in object trees</li>
+</ul>
+
+<h3 id="170">1.7.0</h3>
+<ul>
+  <li>test if initialisation finished before allowing calling t function</li>
+  <li>setting option fixLng=true will return t function on init or setLng with the lng fixed for every subsequent call to t</li>
+  <li>grab key from content if attr data-i18n has no value</li>
+  <li>setting shortcutFunction to ‘defaultValue’ allows calling i18n.t(key, defaultValue)</li>
+  <li>empty string in defaultValue is now valid no longer displaying key</li>
+  <li>allow option cookieDomain</li>
+  <li>fixes issue #115 out of stack exception in IE8 by recursing _translate in objectTrees</li>
+</ul>
+
+<h3 id="163">1.6.3</h3>
+<ul>
+  <li>option to parse key if missing</li>
+  <li>fixes issue where plural don’t get translated if language is passed in t options</li>
+  <li>fixes issue where key or defaultValue aren’t postProcessed with itself as value</li>
+  <li>fixes issue with fallbackLng = false in combination with sendMissingTo = fallback</li>
+  <li>fixes namespace fallback loop to only loop if array has really a ns in it</li>
+</ul>
+
+<h3 id="162">1.6.2</h3>
+<ul>
+  <li>fixes some var typo</li>
+  <li>fixes sendMissing to correct namespace</li>
+  <li>fixes sendMissing in combination with fallbackNS</li>
+</ul>
+
+<h3 id="161">1.6.1</h3>
+<ul>
+  <li>PR #106 optionally un/escape interpolated content</li>
+  <li>PR #101 automatic gettext like sprintf syntax detection + postprocess injection</li>
+  <li>customload will get called on dynamicLoad too</li>
+  <li>fixes namespace array settings if loaded resourcebundle or additional namespaces</li>
+  <li>lookup of not existend resouces can be fallbacked to other namespaces - see option fallbackNS (array or string if one ns to fallback to)</li>
+  <li>defaultValues get postProcessed</li>
+  <li>BREAKING: per default null values in resources get translated to fallback. This can be changed by setting option fallbackOnNull to false</li>
+  <li>PR #81 added support for passing options to nested resources</li>
+  <li>PR #88 added an exists method to check for the existence of a key in the resource store</li>
+  <li>fixed issue with null value throws in applyReplacement function</li>
+  <li>fixed issue #80 empty string lookup ends in fallback instead of returning result in language</li>
+  <li>fixed issue with null value in resources not returning expected value</li>
+  <li>optimized tests to use on server (nodejs) too</li>
+  <li>allow zepto as drop in replacement for $</li>
+  <li>using testacular as runner</li>
+  <li>upgraded to grunt 0.4.0</li>
+  <li>fixed optional interpolation prefix/suffix not used in plural translation cases</li>
+  <li>optimized check if there are multiple keys for the data-i18n attribute to parse</li>
+</ul>
+
+<h3 id="160">1.6.0</h3>
+<ul>
+  <li>option to specify target to set attributes with jquery function by using ‘data-i18n-target attribute’</li>
+  <li>function to set new options for nesting functionality</li>
+  <li>function to add resources after init</li>
+  <li>option to lookup in default namespace if value is not found in given namespace</li>
+  <li>option to change interpolation prefix and suffix via translation options</li>
+  <li>fixed issue with using ns/keyseparator on plurals, context,…</li>
+  <li>fixed issue with posting missing when not using jquery</li>
+  <li>post missing in correct lng if lng is given in translation options</li>
+  <li>proper usage of deferred object in init function</li>
+  <li>fixed issue replacing values in objectTree</li>
+</ul>
+
+<h3 id="1510">1.5.10</h3>
+<ul>
+  <li>BREAKING: fixed plural rules for languages with extended plural forms (more than 2 forms)</li>
+  <li>merged pull #61 - custom loader (enables jsonp or other loading custom loading strategies)</li>
+  <li>escaping interpolation prefix/suffix for proper regex replace</li>
+</ul>
+
+<h3 id="159">1.5.9</h3>
+<ul>
+  <li>functions to load additional namespaces after init and to set default namespace to something else</li>
+  <li>set if you don’t want to read defaultValues from content while using jquery fc</li>
+  <li>set dataAttribute to different value</li>
+  <li>set cookieName to different value</li>
+  <li>some smallbugfixes</li>
+  <li>typesafe use of console if in debug mode</li>
+</ul>
+
+<h3 id="158">1.5.8</h3>
+<ul>
+  <li>disable cookie usage by setting init option useCookie to false</li>
+  <li>accept empty string as translation value</li>
+  <li>fixed bug in own ajax implementation not using proper sendType</li>
+  <li>fixed bug for returning objTree in combination with namespace</li>
+  <li>fixed bug in plurals of romanic lngs</li>
+</ul>
+
+<h3 id="157">1.5.7</h3>
+<ul>
+  <li>pass namespace in t() options</li>
+  <li>interpolation nesting</li>
+  <li>changable querystring param to look language up from</li>
+</ul>
+
+<h3 id="156">1.5.6</h3>
+<ul>
+  <li>typesafe check for window, document existance</li>
+  <li>runnable under rhino</li>
+  <li>seperated amd builds with/without jquery</li>
+</ul>
+
+<h3 id="155">1.5.5</h3>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>BREAKING</strong> added all plurals: suffixes will new be same as in gettext usage (number indexes key_plural_0</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>7</td>
+          <td>8</td>
+          <td>10</td>
+          <td>11</td>
+          <td>20</td>
+          <td>100), additional if needed signature of addRule has changed</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>added sprintf as postprocessor -&gt; postProcess = ‘sprintf’ and sprintf = obj or array</li>
+  <li>set default postProcessor on init</li>
+  <li>redone build process with grunt</li>
+  <li>drop in replacement for jquery each, extend, ajax</li>
+  <li>setting fallbackLng to false will stop loading and looking it up</li>
+  <li>option to load only current or unspecific language files</li>
+</ul>
+
+<h3 id="150">1.5.0</h3>
+<ul>
+  <li>pass options to sync._fetchOne, use options for fetching</li>
+  <li>support for i18next-webtranslate</li>
+</ul>
+
+<h3 id="141">1.4.1</h3>
+<ul>
+  <li>post processor</li>
+  <li><strong>BREAKING:</strong> localStorage defaults to false</li>
+  <li>added localStorageExpirationTime for better caching control</li>
+  <li>few bug fixes</li>
+</ul>
+
+<h3 id="140">1.4.0</h3>
+<ul>
+  <li>preload multiple languages</li>
+  <li>translate key to other language than current</li>
+  <li>fixed issue with namespace usage in combination with context and plurals</li>
+  <li>more options to send missing values</li>
+  <li>better amd support</li>
+</ul>
+
+<h3 id="134">1.3.4</h3>
+<ul>
+  <li>set type of ajax request to GET (options sendType: default POST)</li>
+  <li>set cookie expiration (options cookieExpirationTime: in minutes)</li>
+  <li>read / cache translation options (context, count, …) in data-attribute (options useDataAttrOptions: default false)</li>
+</ul>
+
+<h3 id="133">1.3.3</h3>
+<ul>
+  <li>optional return an objectTree from translation</li>
+  <li>use jquery promises or callback in initialisation</li>
+  <li>rewrote all tests with mocha.js</li>
+</ul>
+
+<h3 id="132">1.3.2</h3>
+<ul>
+  <li>options to init i18next sync (options -&gt; getAsync = false)</li>
+  <li>replace all occurence of replacement string</li>
+</ul>
+
+<h3 id="131">1.3.1</h3>
+<ul>
+  <li>pass options to selector.i18n() thanks to <a href="https://github.com/jamuhl/i18next/pull/10">@hugojosefson</a></li>
+  <li>close [issue #8(https://github.com/jamuhl/i18next/issues/8)]: Fail silently when trying to access a path with children</li>
+  <li>cleanup</li>
+  <li>debug flag (options.debug -&gt; write infos/errors to console)</li>
+</ul>
+
+<h3 id="125">1.2.5</h3>
+<ul>
+  <li>fix for IE8</li>
+</ul>
+
+<h3 id="124">1.2.4</h3>
+<ul>
+  <li>added indexOf for non ECMA-262 standard compliant browsers (IE &lt; 9)</li>
+  <li>calling i28n() on element with data-i18n attribute will localize it now (i18n now not only works on container elements child)</li>
+</ul>
+
+<h3 id="123">1.2.3</h3>
+
+<ul>
+  <li>extended detectLng: switch via qs <em>setLng=</em> or cookie <em>i18next</em></li>
+  <li>assert county in locale will be uppercased <code class="highlighter-rouge">en-us</code> -&gt; <code class="highlighter-rouge">en-US</code></li>
+  <li>provide option to have locale always lowercased <em>option lowerCaseLng</em></li>
+  <li>set lng cookie when set in init function</li>
+</ul>
+
+<h3 id="12">1.2</h3>
+
+<ul>
+  <li>support for translation context</li>
+  <li>fixed zero count in plurals</li>
+  <li>init without options, callback</li>
+</ul>
+
+<h3 id="11">1.1</h3>
+
+<ul>
+  <li>support for multiple plural forms</li>
+  <li>common.js enabled (for node.js serverside)</li>
+  <li>changes to be less dependent on jquery (override it’s functions, add to root if no jquery)</li>
+  <li>enable it on serverside with node.js <a href="https://github.com/jamuhl/i18next-node">i18next-node</a></li>
+</ul>
+
+<h3 id="10">1.0</h3>
+
+<ul>
+  <li>support for other attribute translation via <em>data-i18n</em> attribute</li>
+  <li>bug fixes</li>
+  <li>tests with qunit and sinon</li>
+</ul>
+
+<h3 id="09">0.9</h3>
+
+<ul>
+  <li>multi-namespace support</li>
+  <li>loading static files or dynamic route</li>
+  <li>jquery function for <em>data-i18n</em> attibute</li>
+  <li>post missing translations to the server</li>
+  <li>graceful fallback en-US -&gt; en -&gt; fallbackLng</li>
+  <li>localstorage support</li>
+  <li>support for pluralized strings</li>
+  <li>insertion of variables into translations</li>
+  <li>translation nesting</li>
+</ul>
+
+
+	
+	    <script src="/static/js/scroll.js"></script>
+
+<!-- Baidu analytics -->
+
+
+<!-- Google analytics -->
+
+
+
+  <script type="text/javascript">
+    var disqusShortName = "https-karthikbalasubramanian-github-io";
+
+    var disqusPublicKey = "N3n8ymxO3tzmAfetCxCQ6HTocyF7PMrvp1pzgkaRTNQkNKRxHnAUwxEixA86xNQv";
+
+    var urlArray = [];
+    $('.disqus-comment-count').each(function () {
+      var url = $(this).attr('data-disqus-url');
+      urlArray.push('link:' + url);
+    });
+    $.ajax({
+      type: 'GET',
+      url: "https://disqus.com/api/3.0/threads/set.jsonp",
+      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
+      cache: false,
+      dataType: "jsonp",
+      success: function (result) {
+        for (var i in result.response) {
+          var count = result.response[i].posts;
+          if ( count ) {
+            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+          }
+        }
+      }
+    });
+</script>
+
+
+
+
+<script async src="/static/js/count.min.js"></script>
+
+	
+
+</body>
+</html>
